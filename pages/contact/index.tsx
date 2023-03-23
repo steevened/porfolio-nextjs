@@ -1,8 +1,9 @@
-import Layout from '@/components/layouts/Layout';
 import Head from 'next/head';
+import { NextPageWithLayout } from '../_app';
 import { ReactElement } from 'react';
+import Layout from '@/components/layouts/Layout';
 
-const Home = () => {
+const Contact: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -15,14 +16,14 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        <h1 className="mt-10 text-3xl font-bold text-center">Home</h1>
+        <h1 className="mt-10 text-3xl font-bold text-center">Contact</h1>
       </main>
     </>
   );
 };
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Contact.getLayout = (page: ReactElement) => {
   return <Layout>{page}</Layout>;
 };
 
-export default Home;
+export default Contact;
