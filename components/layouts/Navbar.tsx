@@ -88,7 +88,7 @@ const Navbar = ({ className }: { className?: string }) => {
             <Button
               onMouseEnter={() => handleHover(0)}
               onMouseLeave={() => handleLeave()}
-              className={`hover:bg-transparent text-gray-300 overflow-hidden  ${
+              className={`hover:bg-transparent text-gray-300 overflow-hidden  active:scale-90 duration-200 ${
                 isHome
                   ? 'bg-gradient-to-br from-app-gray to-neutral-800 shadow-app-shadow'
                   : ''
@@ -101,7 +101,7 @@ const Navbar = ({ className }: { className?: string }) => {
             <Button
               onMouseEnter={() => handleHover(1)}
               onMouseLeave={() => handleLeave()}
-              className={` hover:bg-transparent text-gray-300 overflow-hidden  ${
+              className={` hover:bg-transparent text-gray-300 overflow-hidden active:scale-90 duration-200  ${
                 isAbout
                   ? 'bg-gradient-to-br from-app-gray to-neutral-800 shadow-app-shadow'
                   : ''
@@ -114,7 +114,7 @@ const Navbar = ({ className }: { className?: string }) => {
             <Button
               onMouseEnter={() => handleHover(2)}
               onMouseLeave={() => handleLeave()}
-              className={` hover:bg-transparent text-gray-300 overflow-hidden  ${
+              className={` hover:bg-transparent text-gray-300 overflow-hidden active:scale-90 duration-200  ${
                 isWorks
                   ? 'bg-gradient-to-br from-app-gray to-neutral-800 shadow-app-shadow'
                   : ''
@@ -128,7 +128,7 @@ const Navbar = ({ className }: { className?: string }) => {
             <Button
               onMouseEnter={() => handleHover(3)}
               onMouseLeave={() => handleLeave()}
-              className={` hover:bg-transparent text-gray-300 overflow-hidden  ${
+              className={` hover:bg-transparent text-gray-300 overflow-hidden active:scale-90 duration-200  ${
                 isContact
                   ? 'bg-gradient-to-br from-app-gray to-neutral-800 shadow-app-shadow'
                   : ''
