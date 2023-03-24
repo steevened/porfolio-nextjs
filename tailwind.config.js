@@ -13,7 +13,7 @@ module.exports = {
         'app-gray': '#101010',
       },
       fontFamily: {
-        slab: ['Roboto Slab', 'serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       boxShadow: {
         'app-shadow': 'inset 0 0 0 1px rgba(255, 255, 255, 0.1)',

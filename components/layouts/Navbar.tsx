@@ -57,14 +57,12 @@ const Navbar = ({ className }: { className?: string }) => {
     }
   }, [pathname]);
 
-  console.log(hoverIndex);
-
   return (
     <div
       className={`fixed bottom-0 w-full h-[50px] bg-black  shadow-app-top ${className}`}
     >
-      <div className="flex h-full justify-center items-center">
-        <div className="w-content  relative">
+      <div className="flex items-center justify-center h-full">
+        <div className="relative w-content">
           <span
             className={`absolute h-full bg-gradient-to-br from-zinc-900 to-neutral-800 rounded-md transition-all duration-300 ease-out  ${
               hoverIndex === -1
