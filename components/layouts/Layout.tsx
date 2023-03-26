@@ -54,7 +54,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           mountOnEnter={true}
           unmountOnExit={true}
         >
-          <main>{children}</main>
+          <main className="mb-20">{children}</main>
         </Transition>
       </SwitchTransition>
       <Navbar />

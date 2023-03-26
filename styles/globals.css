@@ -5,7 +5,8 @@
 @tailwind utilities;
 
 body {
-  background-image: ;
+  background-image: url('../public/bg.svg');
+  background-attachment: fixed;
 }
 
 @layer base {
@@ -17,6 +18,10 @@ body {
 @layer components {
   .title-1 {
     @apply text-3xl font-semibold leading-relaxed sm:text-4xl md:text-5xl;
+  }
+
+  .title-2 {
+    @apply text-2xl font-semibold  md:text-3xl;
   }
 }
 
