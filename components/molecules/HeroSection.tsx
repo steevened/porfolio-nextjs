@@ -1,10 +1,11 @@
 import React from 'react';
 import portrait from '../../public/me.jpeg';
 import Image from 'next/image';
+import DivProps from '@/lib/interfaces/components.interface';
 
-export default function HeroSection() {
+export default function HeroSection({ className }: DivProps) {
   return (
-    <div>
+    <div className={` ${className}`}>
       <div className="mx-auto overflow-hidden rounded-full w-28 h-28">
         <Image src={portrait} alt="image steven elias - steevened" />
       </div>
