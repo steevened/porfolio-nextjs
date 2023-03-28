@@ -10,8 +10,10 @@ import Image from 'next/image';
 import { addDoc, collection, getDocs } from 'firebase/firestore/lite';
 import CardHovered from '@/components/atoms/Cards/CardHovered';
 // import { getDocs } from 'firebase/firestore';
+// import { onSnapshot } from 'firebase/firestore/';
 
 interface Skill {
+  id: string;
   name: string;
   image: string;
 }
@@ -22,25 +24,40 @@ const Skills: NextPageWithLayout = () => {
   const [file, setFile] = useState<File | null>(null);
 
   // get data
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<Skill[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      let list: any = [];
+      // let list: any = [];
       try {
         const querySnapshot = await getDocs(collection(db, 'skills'));
+        const fetchedSkills: Skill[] = [];
         querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          list.push({ id: doc.id, ...doc.data() });
+          const skill = doc.data() as Skill;
+          skill.id = doc.id;
+          fetchedSkills.push(skill);
         });
-        // console.log(list);
-        setData(list);
+        setData(fetchedSkills);
       } catch (error) {
         console.log(error);
       }
     };
     fetchData();
-  }, [data]);
+  }, []);
+
+  // useEffect(() => {
+  //   const unsubscribe = onSnapshot(collection(db, 'skills'), (snapshot) => {
+  //     const updatedSkills: Skill[] = [];
+  //     snapshot.docs.forEach((doc) => {
+  //       const skill = doc.data() as Skill;
+  //       skill.id = doc.id;
+  //       updatedSkills.push(skill);
+  //     });
+  //     setData(updatedSkills);
+  //   });
+
+  //   return unsubscribe;
+  // }, [setData]);
 
   // console.log(data);
 
