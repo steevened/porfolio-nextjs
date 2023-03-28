@@ -24,7 +24,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="fixed inset-x-0 top-0 flex items-center justify-center py-5 bg-black shadow-app-bottom">
+      <div className="fixed inset-x-0 top-0 z-50 flex items-center justify-center py-5 bg-black shadow-app-bottom">
         <div className="text-center">
           <h2 className="text-xl font-bold md:">Dashboard</h2>
         </div>

@@ -6,7 +6,9 @@ const CardHovered = ({ children, className, ...restProps }: DivProps) => {
   return (
     <div
       {...restProps}
-      className={`hover:bg-app-gray shadow-app-shadow rounded-md bg-black duration-200 cursor-pointer hover:shadow-app-shadow-hover ${className}`}
+      className={`hover:bg-app-gray shadow-app-shadow rounded-md  duration-200 cursor-pointer hover:shadow-app-shadow-hover ${
+        !className && 'bg-black'
+      } ${className}`}
     >
       {children}
     </div>

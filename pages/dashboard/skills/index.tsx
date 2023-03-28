@@ -1,78 +1,80 @@
 import { NextPageWithLayout } from '../../_app';
 import DashboardLayout from '../../../components/layouts/DashboardLayout';
-import { FormEvent, ReactNode, useState, useEffect } from 'react';
-import {
-  getDownloadURL,
-  ref,
-  uploadBytes,
-  uploadBytesResumable,
-} from 'firebase/storage';
+import { FormEvent, ReactNode, useState, ChangeEvent, useEffect } from 'react';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import AddCard from '../../../components/atoms/Cards/AddCard';
 import { Button } from '@mui/material';
 import Input from '@/components/atoms/inputs/Input';
 import { db, storage } from '@/lib/firebase/config';
 import Image from 'next/image';
-import { doc, setDoc } from 'firebase/firestore/lite';
+import { addDoc, collection, getDocs } from 'firebase/firestore/lite';
+import CardHovered from '@/components/atoms/Cards/CardHovered';
+// import { getDocs } from 'firebase/firestore';
+
+interface Skill {
+  name: string;
+  image: string;
+}
 
 const Skills: NextPageWithLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [name, setName] = useState<string>('');
+  const [file, setFile] = useState<File | null>(null);
 
-  const [skillName, setSkillName] = useState<string>('');
-  const [skillImage, setSkillImage] = useState<File | null>(null);
-  const [data, setData] = useState<any>(null);
-
-  const [progress, setProgress] = useState<number | null>(null);
+  // get data
+  const [data, setData] = useState<any>([]);
 
   useEffect(() => {
-    if (!skillImage) return;
-    const imgName = new Date().getTime() + skillImage?.name;
-
-    const uploadFile = () => {
-      const storageRef = ref(storage, skillImage.name);
-
-      const uploadFile = uploadBytesResumable(storageRef, skillImage);
-
-      uploadFile.on(
-        'state_changed',
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is' + progress + '% done');
-          setProgress(progress);
-          switch (snapshot.state) {
-            case 'paused':
-              console.log('Upload is paused');
-              break;
-            case 'running':
-              console.log('Upload is running');
-              break;
-            default:
-              break;
-          }
-        },
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          getDownloadURL(uploadFile.snapshot.ref).then((downloadUrl) => {
-            setData({ skillName, skillImage: downloadUrl });
-          });
-        }
-      );
+    const fetchData = async () => {
+      let list: any = [];
+      try {
+        const querySnapshot = await getDocs(collection(db, 'skills'));
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          list.push({ id: doc.id, ...doc.data() });
+        });
+        // console.log(list);
+        setData(list);
+      } catch (error) {
+        console.log(error);
+      }
     };
-    skillImage && uploadFile();
-  }, [skillImage]);
+    fetchData();
+  }, [data]);
 
-  async function handleAddSkill(e: FormEvent) {
+  // console.log(data);
+
+  // chatgpt stuff
+
+  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFile(e.target.files[0]);
+    }
+  };
+
+  const handleSumbit = async (e: FormEvent) => {
     e.preventDefault();
 
+    // upload the image
     try {
-      const response = await setDoc(doc(db, 'skills'), data);
-      // console.log(data);
+      const imageRef = ref(storage, `images/${file?.name}`);
+      await uploadBytes(imageRef, file!);
+      const imageUrl = await getDownloadURL(imageRef);
+
+      const skill: Skill = {
+        name: name,
+        image: imageUrl,
+      };
+
+      await addDoc(collection(db, 'skills'), skill);
     } catch (error) {
       console.log(error);
     }
-  }
+
+    setName('');
+    setFile(null);
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="">
@@ -82,10 +84,24 @@ const Skills: NextPageWithLayout = () => {
         </h1>
 
         <div className="flex flex-wrap justify-center gap-5 mt-10">
+          {data.map((skill: any) => (
+            <CardHovered
+              className="relative w-32 h-32 p-5 overflow-hidden group after:absolute after:inset-1 after:hover:bg-black/90 after:z-10 bg-app-gray "
+              key={skill.id}
+            >
+              <Image
+                src={skill.image}
+                alt="technologie"
+                className="object-contain w-full h-full drop-shadow-lg"
+                width={1000}
+                height={1000}
+              />
+              <span className="absolute z-20 text-lg font-semibold duration-300 -translate-x-1/2 translate-y-1/2 -bottom-full left-1/2 group-hover:bottom-1/2">
+                {skill.name}
+              </span>
+            </CardHovered>
+          ))}
           <AddCard onClick={() => setIsModalOpen(true)} />
-          {/* <AddCard onClick={() => console.log('click')} /> */}
-          {/* <AddCard onClick={() => console.log('click')} /> */}
-          {/* <AddCard onClick={() => console.log('click')} /> */}
         </div>
         <div
           onClick={() => setIsModalOpen(false)}
@@ -94,11 +110,11 @@ const Skills: NextPageWithLayout = () => {
           }`}
         />
         <div
-          className={`absolute inset-y-0 duration-700   w-full max-w-md bg-app-gray shadow-app-left ${
+          className={`absolute inset-y-0 duration-700  z-50 w-full max-w-md bg-app-gray shadow-app-left ${
             isModalOpen ? 'right-0' : '-right-full'
           }`}
         >
-          <form onSubmit={handleAddSkill} className="flex flex-col h-full ">
+          <form onSubmit={handleSumbit} className="flex flex-col h-full ">
             <div className="grow">
               <div className="py-2 shadow-app-bottom">
                 <h3 className="text-xl font-semibold text-gradient">
@@ -109,7 +125,8 @@ const Skills: NextPageWithLayout = () => {
                 <label className="block pb-1 text-sm font-semibold text-start ">
                   <span>Name</span>
                   <Input
-                    onChange={(e) => setSkillName(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required
                   />
                 </label>
@@ -118,11 +135,11 @@ const Skills: NextPageWithLayout = () => {
                   className="object-cover w-32 h-32 space-y-2 text-sm font-semibold text-start"
                 >
                   <span className="mb-10">Image</span>
-                  {skillImage ? (
+                  {file ? (
                     <Image
                       width={100}
                       height={100}
-                      src={URL.createObjectURL(skillImage)}
+                      src={URL.createObjectURL(file)}
                       alt="skill"
                       className="w-full h-full "
                     />
@@ -134,9 +151,7 @@ const Skills: NextPageWithLayout = () => {
                     type="file"
                     id="file"
                     className="hidden"
-                    onChange={(e) => {
-                      if (e.target.files) setSkillImage(e.target.files[0]);
-                    }}
+                    onChange={handleImageUpload}
                   />
                 </label>
               </div>
