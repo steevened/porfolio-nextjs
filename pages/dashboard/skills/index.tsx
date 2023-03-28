@@ -13,7 +13,7 @@ import CardHovered from '@/components/atoms/Cards/CardHovered';
 // import { onSnapshot } from 'firebase/firestore/';
 
 interface Skill {
-  id: string;
+  id?: string;
   name: string;
   image: string;
 }
