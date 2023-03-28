@@ -1,0 +1,16 @@
+import React from 'react';
+import DivProps from '../../../lib/interfaces/components.interface';
+import Card from '@/components/atoms/Cards/Card';
+
+const CardHovered = ({ children, className, ...restProps }: DivProps) => {
+  return (
+    <div
+      {...restProps}
+      className={`hover:bg-app-gray shadow-app-shadow rounded-md bg-black duration-200 cursor-pointer hover:shadow-app-shadow-hover ${className}`}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default CardHovered;

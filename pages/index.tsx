@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import { ArrowLeftIcon } from '../components/svg/Svg';
-import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
 import HeroSection from '@/components/molecules/HeroSection';
 
 const Home = () => {
