@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { auth } from '@/lib/firebase/config';
 import { useRouter } from 'next/router';
+import { supabase } from '../../lib/supabase/supabase';
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -16,8 +17,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
   };
 
   const handleLogOut = () => {
-    auth.signOut();
+    supabase.auth.signOut();
     handleClose();
+    router.push('/auth/login');
   };
 
   const router = useRouter();

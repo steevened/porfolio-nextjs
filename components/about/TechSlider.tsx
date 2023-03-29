@@ -1,92 +1,94 @@
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay } from 'swiper';
+import { useEffect, useState } from 'react';
+import { Skill } from '../../lib/interfaces/api.interface';
+import { supabase } from '@/lib/supabase/supabase';
+import Image from 'next/image';
 
-interface Skill {
-  name: string;
-  id: number;
+function SampleNextArrow(props: any) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className="hidden"
+      style={{ ...style, display: 'none' }}
+      onClick={onClick}
+    />
+  );
 }
 
-const skills: Skill[] = [
-  {
-    name: 'HTML',
-    id: 1,
-  },
-  {
-    name: 'CSS',
-    id: 2,
-  },
-  {
-    name: 'JavaScript',
-    id: 3,
-  },
-  {
-    name: 'TypeScript',
-    id: 4,
-  },
-  {
-    name: 'React',
-    id: 5,
-  },
-  {
-    name: 'Next.js',
-    id: 6,
-  },
-  {
-    name: 'Node.js',
-    id: 7,
-  },
-  {
-    name: 'Express.js',
-    id: 8,
-  },
-  {
-    name: 'MongoDB',
-    id: 9,
-  },
-  {
-    name: 'PostgreSQL',
-    id: 10,
-  },
-];
+function SamplePrevArrow(props: any) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', background: 'green' }}
+      onClick={onClick}
+    />
+  );
+}
 
 export const TechSlider = () => {
+  const [skills, setSkills] = useState<Skill[]>([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data: skillsResponse, error } = await supabase
+          .from('skills')
+          .select();
+        if (error) throw error;
+        // console.log(data);
+        setSkills(skillsResponse as Skill[]);
+      } catch (error) {
+        console.log('error: ', error);
+      }
+    };
+    getData();
+  }, []);
+
   const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
+    slidesPerView: 5,
+    spaceBetween: 30,
+    loop: true,
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
+    // modules: {[Autoplay]}
   };
 
   return (
-    <Slider {...settings}>
+    <Swiper
+      slidesPerView={2}
+      centeredSlides={true}
+      loop={true}
+      autoplay={{
+        delay: 2000,
+        // disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      breakpoints={{
+        320: {
+          slidesPerView: 2.2,
+        },
+      }}
+      modules={[Autoplay]}
+      className="w-full shadow-app-shadow bg-app-gray"
+    >
       {skills.map((skill) => (
-        <div key={skill.id} className="border">
-          <p>{skill.name}</p>
-        </div>
+        <SwiperSlide key={skill.id} className="bg-app-gray">
+          <div className="w-32 h-32 p-5 bg-app-gray">
+            <Image
+              src={skill.image_url}
+              className="object-contain w-full h-full backdrop-grayscale-[100]"
+              alt="tech"
+              width={1000}
+              height={1000}
+            />
+          </div>
+        </SwiperSlide>
       ))}
-    </Slider>
+    </Swiper>
   );
 };

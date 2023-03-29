@@ -27,7 +27,9 @@ const About: NextPageWithLayout = () => {
           </div>
           <DetailsCard className="mt-10" />
 
-          <TechSlider />
+          <div className="">
+            <TechSlider />
+          </div>
 
           <div className="flex flex-col items-center justify-center mx-auto mt-10 md:w-9/12">
             <h4 className="text-gradient title-2">Days I Code</h4>
