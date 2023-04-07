@@ -6,7 +6,6 @@ import SkillsContainer from './SkillsContainer';
 
 const SkillsCards = () => {
   const { data: skills, isLoading, isError } = usePortfolioQuery('skills');
-  console.log(isLoading);
   return (
     <SkillsContainer>
       {skills?.map((skill: Skill) => (

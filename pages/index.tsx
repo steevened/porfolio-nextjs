@@ -20,7 +20,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="md:mt-14">
+      <section className="md:mt-14">
         <div className="container flex flex-col-reverse items-center px-5 py-24 mx-auto gap-y-10 md:flex-row">
           <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:flex-1 md:pr-16 md:items-start md:text-left md:mb-0">
             <h1 className="mb-4 title-1 text-gradient ">
@@ -54,7 +54,7 @@ const Home = () => {
             <HeroSection />
           </div>
         </div>
-      </main>
+      </section>
     </>
   );
 };
