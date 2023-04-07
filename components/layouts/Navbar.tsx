@@ -59,7 +59,7 @@ const Navbar = ({ className }: { className?: string }) => {
 
   return (
     <div
-      className={`fixed bottom-0 w-full h-[50px] bg-black  shadow-app-top ${className}`}
+      className={`fixed bottom-0 w-full h-[50px] bg-black z-50  shadow-app-top ${className}`}
     >
       <div className="flex items-center justify-center h-full">
         <div className="relative w-content">

@@ -4,14 +4,13 @@ import { FormEvent, ReactNode, useState, ChangeEvent, useEffect } from 'react';
 import AddCard from '../../../components/atoms/Cards/AddCard';
 import { Button } from '@mui/material';
 import Input from '@/components/atoms/inputs/Input';
-
 import Image from 'next/image';
-
 import CardHovered from '@/components/atoms/Cards/CardHovered';
-
 import { supabase } from '../../../lib/supabase/supabase';
 import { LoadingIcon } from '@/components/svg/Svg';
 import { Skill } from '@/lib/interfaces/api.interface';
+import SkillsCards from '@/components/skills/SkillsCards';
+import usePortfolioMutation from '../../../lib/hooks/useMutation';
 
 const Skills: NextPageWithLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -21,6 +20,8 @@ const Skills: NextPageWithLayout = () => {
 
   // get data
   const [data, setData] = useState<Skill[]>([]);
+
+  const mutatePortfolio = usePortfolioMutation('skills', data);
 
   // handle Image Upload
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -32,8 +33,8 @@ const Skills: NextPageWithLayout = () => {
   const handleSumbit = async (e: FormEvent) => {
     e.preventDefault();
 
-    // upload the image
     setIsBtnLoading(true);
+    // upload the image
     try {
       const { data: fileData, error: fileError } = await supabase.storage
         .from('skills')
@@ -48,15 +49,19 @@ const Skills: NextPageWithLayout = () => {
           .getPublicUrl(fileData.path);
         const publicUrl = resp.data.publicUrl;
 
-        const { data: skillData, error: skillError } = await supabase
-          .from('skills')
-          .insert({ name, image_url: publicUrl })
-          .select();
-        if (skillError) {
-          throw skillError;
-        }
+        setData([...data, { name, image_url: publicUrl }]);
 
-        setData([...skillData, ...data] as Skill[]);
+        mutatePortfolio.mutate();
+
+        // const { data: skillData, error: skillError } = await supabase
+        //   .from('skills')
+        //   .insert({ name, image_url: publicUrl })
+        //   .select();
+        // if (skillError) {
+        //   throw skillError;
+        // }
+
+        // setData([...skillData, ...data] as Skill[]);
       }
       // console.log(imageUrl);
     } catch (error) {
@@ -69,23 +74,6 @@ const Skills: NextPageWithLayout = () => {
     setIsBtnLoading(false);
   };
 
-  // fetch data
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data: skillsResponse, error } = await supabase
-          .from('skills')
-          .select();
-        if (error) throw error;
-        // console.log(data);
-        setData(skillsResponse as Skill[]);
-      } catch (error) {
-        console.log('error: ', error);
-      }
-    };
-    getData();
-  }, []);
-
   return (
     <div className="">
       <div className="text-center">
@@ -94,23 +82,7 @@ const Skills: NextPageWithLayout = () => {
         </h1>
 
         <div className="flex flex-wrap justify-center gap-5 mt-10">
-          {data.map((skill: any) => (
-            <CardHovered
-              className="relative w-32 h-32 p-5 overflow-hidden group after:absolute after:inset-1 after:hover:bg-black/90 after:z-10 bg-app-gray"
-              key={skill.id}
-            >
-              <Image
-                src={skill.image_url}
-                alt="technologie"
-                className="object-contain w-full h-full drop-shadow-lg"
-                width={1000}
-                height={1000}
-              />
-              <span className="absolute z-20 text-lg font-semibold duration-300 -translate-x-1/2 translate-y-1/2 -bottom-8 left-1/2 group-hover:bottom-1/2">
-                {skill.name}
-              </span>
-            </CardHovered>
-          ))}
+          <SkillsCards />
           <AddCard onClick={() => setIsModalOpen(true)} />
         </div>
         <div
@@ -120,7 +92,7 @@ const Skills: NextPageWithLayout = () => {
           }`}
         />
         <div
-          className={`absolute inset-y-0 duration-700  z-50 w-full max-w-md bg-app-gray shadow-app-left ${
+          className={`fixed top-0 h-screen duration-700  z-50 w-full max-w-md bg-app-gray shadow-app-left ${
             isModalOpen ? 'right-0' : '-right-full'
           }`}
         >
@@ -181,7 +153,7 @@ const Skills: NextPageWithLayout = () => {
                   type="submit"
                   className={`text-white bg-green-700 disabled:bg-gray-600 shadow-app-shadow`}
                 >
-                  Save
+                  {isBtnLoading ? 'Saving' : 'Save'}
                 </Button>
               </div>
             </div>

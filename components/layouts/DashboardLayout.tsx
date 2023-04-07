@@ -60,7 +60,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           </Menu>
         </div>
       </div>
-      <main className="h-screen max-w-4xl py-24 mx-5 md:mx-auto">
+      <main className="min-h-screen h-full max-w-4xl py-24 mx-5 md:mx-auto">
         {children}
       </main>
     </div>

@@ -2,11 +2,10 @@ import { NextPageWithLayout } from '../_app';
 import { ReactElement } from 'react';
 import Layout from '@/components/layouts/Layout';
 import Head from 'next/head';
-
 import GitHubCalendar from 'react-github-calendar';
 import DetailsCard from '@/components/about/DetailsCard';
 import Card from '@/components/atoms/Cards/Card';
-import { TechSlider } from '@/components/about/TechSlider';
+import SkillsCards from '@/components/skills/SkillsCards';
 
 const About: NextPageWithLayout = () => {
   return (
@@ -27,9 +26,7 @@ const About: NextPageWithLayout = () => {
           </div>
           <DetailsCard className="mt-10" />
 
-          <div className="">
-            <TechSlider />
-          </div>
+          <SkillsCards />
 
           <div className="flex flex-col items-center justify-center mx-auto mt-10 md:w-9/12">
             <h4 className="text-gradient title-2">Days I Code</h4>
