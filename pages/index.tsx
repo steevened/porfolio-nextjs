@@ -19,9 +19,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="mt-6 md:mt-14">
-        <CardHome />
-      </section>
+      <section className="mt-6 md:mt-14">{/* <CardHome />  */}</section>
     </>
   );
 };

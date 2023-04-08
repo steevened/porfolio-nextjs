@@ -1,17 +1,6 @@
-import { Button } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import BtnNavbar from '../atoms/buttons/BtnNavbar';
-import HomeIcon, { HomeIconOut } from '../svg/Svg';
-import {
-  AboutIconOut,
-  AboutIcon,
-  WorksIconOut,
-  WorksIcon,
-  ContactIconOut,
-  ContactIcon,
-} from '../svg/Svg';
 
 const Navbar = ({ className }: { className?: string }) => {
   const [hoverIndex, setHoverIndex] = useState<number>(-1);
@@ -66,7 +55,7 @@ const Navbar = ({ className }: { className?: string }) => {
       </Link>
       <ul className="relative items-center hidden mx-4 overflow-hidden sm:flex">
         <span
-          className={`absolute h-full bg-gradient-to-br from-zinc-900 to-neutral-800 rounded-sm transition-all duration-300 ease-out pointer-events-none w-1/4 ${
+          className={`absolute h-full bg-gradient-to-br from-zinc-900 to-neutral-800 rounded-lg transition-all duration-700 ease-out pointer-events-none w-1/4 ${
             hoverIndex === -1
               ? routeIndex === -1
                 ? '-left-1/4'
@@ -92,7 +81,7 @@ const Navbar = ({ className }: { className?: string }) => {
         ></span>
 
         <Link
-          className={`w-20 px-2 py-1 bg-transparent z-50 ${
+          className={`w-20 px-2 py-1 bg-transparent rounded-lg z-50 ${
             isAbout &&
             'bg-gradient-to-br from-app-gray to-neutral-800 shadow-app-shadow z-10'
           }`}
@@ -105,7 +94,7 @@ const Navbar = ({ className }: { className?: string }) => {
         <li
           onMouseEnter={() => handleHover(1)}
           onMouseLeave={() => handleLeave()}
-          className={`w-20 px-2 py-1 rounded-sm bg-transparent z-50 ${
+          className={`w-20 px-2 py-1 rounded-lg bg-transparent z-50 ${
             isWorks &&
             'bg-gradient-to-br from-app-gray to-neutral-800 shadow-app-shadow z-10'
           }`}
@@ -115,7 +104,7 @@ const Navbar = ({ className }: { className?: string }) => {
         <li
           onMouseEnter={() => handleHover(2)}
           onMouseLeave={() => handleLeave()}
-          className={`w-20 px-2 py-1 rounded-sm bg-transparent z-50 ${
+          className={`w-20 px-2 py-1 rounded-lg bg-transparent z-50 ${
             isBlogs &&
             'bg-gradient-to-br from-app-gray to-neutral-800 shadow-app-shadow z-10'
           }`}
@@ -125,7 +114,7 @@ const Navbar = ({ className }: { className?: string }) => {
         <li
           onMouseEnter={() => handleHover(3)}
           onMouseLeave={() => handleLeave()}
-          className={`w-20 px-2 py-1 rounded-sm bg-transparent z-50 ${
+          className={`w-20 px-2 py-1 rounded-lg bg-transparent z-50 ${
             isContact &&
             'bg-gradient-to-br from-app-gray to-neutral-800 shadow-app-shadow z-10'
           }`}

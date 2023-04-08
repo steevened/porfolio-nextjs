@@ -1,4 +1,4 @@
-import { AcademloIcon } from '../svg/Svg';
+import { AcademloIcon, GithubLogo, LinkedinLogo } from '../svg/Svg';
 import me from '@/public/me.png';
 import Image from 'next/image';
 
@@ -13,7 +13,7 @@ export const CardHome = () => {
       </div>
       <div className="flex flex-col justify-center gap-3 bg-transparent text-start">
         <h1 className="bg-transparent -tracking-tight text-gradient md:title-3">
-          @STEEEVENED
+          @STEEVENED
         </h1>
         <h2 className="flex items-center text-sm text-gray-400 md:text-lg">
           Web Developer at{' '}
@@ -22,6 +22,19 @@ export const CardHome = () => {
           </span>
           Academlo
         </h2>
+      </div>
+      <div className="flex flex-col justify-between ">
+        <button className="p-2 duration-200 rounded-md shadow-app-shadow bg-app-gray hover:bg-neutral-800">
+          <a href="https://www.linkedin.com/in/steevened/" target="_blank">
+            <LinkedinLogo />
+          </a>
+        </button>
+
+        <button className="p-2 duration-200 rounded-md shadow-app-shadow bg-app-gray hover:bg-neutral-800">
+          <a href="https://github.com/steevened" target="_blank">
+            <GithubLogo />
+          </a>
+        </button>
       </div>
     </div>
   );
