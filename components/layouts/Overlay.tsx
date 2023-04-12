@@ -24,7 +24,7 @@ const Overlay = () => {
 
   return (
     <div
-      role="button"
+      // role="button"
       onClick={closeSideMenu}
       tabIndex={0}
       ref={overlayRef}

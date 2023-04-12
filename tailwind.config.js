@@ -30,7 +30,11 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 5s linear infinite',
       },
+      backgroundImage: {
+        light: 'url("../public/bg.png")',
+        dark: 'url("../public/bg.svg")',
+      },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [],
 };

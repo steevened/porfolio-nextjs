@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-image: url('../public/bg.svg');
-  background-attachment: fixed;
-}
-
 @layer base {
   .base-font {
     @apply font-montserrat;
@@ -34,5 +29,8 @@ body {
   }
   .test {
     @apply border border-red-500;
+  }
+  .btn {
+    @apply px-4 py-3 duration-200 rounded-md hover:bg-sky-300/50 hover:text-sky-700/80;
   }
 }

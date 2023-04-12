@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <Overlay />
 
       <main
-        className={`max-w-3xl px-5 mx-auto duration-500 ${
+        className={`max-w-3xl px-5 mx-auto duration-500 mt-24 ${
           sideMenuOpen && 'translate-x-5'
         }`}
       >
