@@ -5,6 +5,8 @@ interface ContextProps {
   openSideMenu: () => void;
   closeSideMenu: () => void;
   toggleSideMenu: () => void;
+  isNavbarSticky: boolean;
+  setNavbarSticky: (isSticky: boolean) => void;
 }
 
 export const UIContext = createContext({} as ContextProps);

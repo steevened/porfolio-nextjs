@@ -11,6 +11,8 @@ import {
   useState,
 } from 'react';
 import {
+  GithubLogo,
+  LinkedinLogo,
   MoonIcon,
   MoonIconOut,
   SunIcon,
@@ -87,24 +89,37 @@ const Drawer: FC<PropsWithChildren> = ({ children }) => {
             {item.name}
           </Link>
         ))}
-        <div className="flex justify-between w-full text-center duration-100 rounded-sm dark:shadow-app-shadow shadow-app-shadow-light">
+        <div className="flex justify-between w-full text-center duration-100 rounded-sm dark:shadow-app-shadow shadow-app-shadow-light ">
           <button
             onClick={() => setTheme('system')}
-            className="flex items-center justify-center flex-1 py-3 duration-100 hover:shadow-app-shadow-hover dark:hover:bg-black hover:bg-zinc-200"
+            className="flex items-center justify-center flex-1 btn"
           >
             {theme === 'system' ? <SystemOut /> : <SystemIcon />}
           </button>
           <button
-            className="flex items-center justify-center flex-1 py-3 duration-100 hover:shadow-app-shadow-hover dark:hover:bg-black hover:bg-zinc-200"
+            className="flex items-center justify-center flex-1 btn"
             onClick={() => setTheme('light')}
           >
             {theme === 'light' ? <SunIconOut /> : <SunIcon />}
           </button>
           <button
-            className="flex items-center justify-center flex-1 py-3 duration-100 hover:shadow-app-shadow-hover dark:hover:bg-black hover:bg-zinc-200"
+            className="flex items-center justify-center flex-1 btn"
             onClick={() => setTheme('dark')}
           >
             {theme === 'dark' ? <MoonIconOut /> : <MoonIcon />}
+          </button>
+        </div>
+        <div className="flex justify-center gap-2 mt-4">
+          <button className="btn">
+            <a href="https://www.linkedin.com/in/steevened/" target="_blank">
+              <LinkedinLogo />
+            </a>
+          </button>
+
+          <button className="btn">
+            <a href="https://github.com/steevened" target="_blank">
+              <GithubLogo />
+            </a>
           </button>
         </div>
       </div>

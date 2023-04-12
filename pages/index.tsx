@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import { ReactElement } from 'react';
 import { CardHome } from '@/components/home';
+import CardSticky from '@/components/home/CardSticky';
 
 const Home = () => {
   return (
@@ -19,7 +20,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="mt-6 md:mt-14"></section>
+      <section className="relative my-12 space-y-10 ">
+        <CardHome />
+        <div className="h-screen"></div>
+      </section>
     </>
   );
 };

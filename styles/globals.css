@@ -25,12 +25,12 @@
 
 @layer utilities {
   .text-gradient {
-    @apply text-transparent bg-clip-text bg-gradient-to-br from-gray-200 to-zinc-600;
+    @apply text-transparent bg-clip-text bg-gradient-to-br from-sky-400 to-sky-900 dark:from-slate-200 dark:to-slate-600;
   }
   .test {
     @apply border border-red-500;
   }
   .btn {
-    @apply px-4 py-3 duration-200 rounded-md hover:bg-sky-300/50 hover:text-sky-700/80;
+    @apply px-4 py-3 duration-200 rounded-md hover:bg-sky-300/50 hover:text-sky-700/80 dark:hover:bg-sky-700/50 dark:hover:text-sky-300/80;
   }
 }
