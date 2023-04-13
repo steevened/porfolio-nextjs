@@ -1,10 +1,16 @@
 import { ArrowLeftIcon, SecureBtn } from '@/components/svg/Svg';
 import signUp from '@/lib/firebase/auth/signUp';
+import { supabase } from '@/lib/supabase/supabase';
 import { Button } from '@mui/material';
 import { useRouter } from 'next/router';
 import { EventHandler, useState } from 'react';
 
-const Login = () => {
+interface User {
+  email: string;
+  password: string;
+}
+
+const SignUp = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const router = useRouter();
@@ -12,14 +18,22 @@ const Login = () => {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { error, result } = await signUp(email, password);
+    const data: User = {
+      email,
+      password,
+    };
 
-    if (error) {
-      return console.log(error);
+    try {
+      const response = await supabase.auth.signUp(data);
+      if (response.error) throw response.error;
+      const userID = response.data.user?.id;
+      console.log(userID);
+      setEmail('');
+      setPassword('');
+      router.push('/auth/login');
+    } catch (error) {
+      console.log(error);
     }
-
-    console.log(result);
-    return router.push('/auth/login');
   };
 
   return (
@@ -75,4 +89,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

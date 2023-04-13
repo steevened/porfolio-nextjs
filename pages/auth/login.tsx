@@ -1,8 +1,14 @@
 import { ArrowLeftIcon, SecureBtn } from '@/components/svg/Svg';
-import signIn from '@/lib/firebase/auth/signIn';
+import { supabase } from '@/lib/supabase/supabase';
 import { Button } from '@mui/material';
+import { useUser } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+
+interface User {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
   const router = useRouter();
@@ -12,15 +18,27 @@ const Login = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { error, result } = await signIn(email, password);
+    const data: User = {
+      email,
+      password,
+    };
 
-    if (error) {
-      return console.log(error);
+    try {
+      const response = await supabase.auth.signInWithPassword(data);
+      if (response.error) throw response.error;
+      const userID = response.data.user?.id;
+      console.log(userID);
+      setEmail('');
+      setPassword('');
+      router.push('/dashboard');
+    } catch (error) {
+      console.log(error);
     }
-
-    console.log(result);
-    return router.push('/dashboard');
   };
+
+  const user = useUser();
+
+  // console.log(user);
 
   return (
     <div className="flex flex-col justify-center min-h-screen sm:py-12">

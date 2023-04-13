@@ -1,63 +1,29 @@
-import { useRouter } from 'next/router';
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
 import Navbar from './Navbar';
-import gsap from 'gsap';
-import { SwitchTransition, Transition } from 'react-transition-group';
-
-const onPageEnter = (node: HTMLElement) => {
-  gsap.fromTo(
-    node,
-    {
-      y: 50,
-      autoAlpha: 0,
-      ease: 'power3',
-    },
-    {
-      y: 0,
-      autoAlpha: 1,
-      duration: 1,
-      ease: 'power3',
-    }
-  );
-};
-
-const onPageExit = (node: HTMLElement) => {
-  gsap.fromTo(
-    node,
-    {
-      y: 0,
-      autoAlpha: 1,
-      ease: 'power3.out',
-    },
-    {
-      y: -50,
-      autoAlpha: 0,
-      duration: 0.5,
-      ease: 'power3.out',
-    }
-  );
-};
+import { UIContext } from '@/context/ui';
+import Drawer from './Drawer';
+import Overlay from './Overlay';
+import CardSticky from '../home/CardSticky';
+import Footer from './Footer';
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  const router = useRouter();
-  const { pathname } = router;
-
+  const { sideMenuOpen } = useContext(UIContext);
   return (
-    <div className="">
-      <SwitchTransition>
-        <Transition
-          key={pathname}
-          timeout={500}
-          in={true}
-          onEnter={onPageEnter}
-          onExit={onPageExit}
-          mountOnEnter={true}
-          unmountOnExit={true}
-        >
-          <main className="mb-20">{children}</main>
-        </Transition>
-      </SwitchTransition>
+    <div className="overflow-x-hidden ">
+      <Drawer />
       <Navbar />
+
+      <Overlay />
+      <CardSticky />
+
+      <main
+        className={`max-w-3xl px-5 mx-auto duration-500 pt-24  ${
+          sideMenuOpen && 'translate-x-5'
+        }`}
+      >
+        {children}
+      </main>
+      <Footer />
     </div>
   );
 };

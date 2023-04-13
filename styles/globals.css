@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-image: url('../public/bg.svg');
-  background-attachment: fixed;
-}
-
 @layer base {
   .base-font {
     @apply font-montserrat;
@@ -23,10 +18,25 @@ body {
   .title-2 {
     @apply text-2xl font-semibold  md:text-3xl;
   }
+  .title-3 {
+    @apply text-xl font-semibold  md:text-2xl;
+  }
+  .subtitle-1 {
+    @apply text-lg font-semibold  md:text-xl;
+  }
+  .subtitle-2 {
+    @apply text-base font-medium  md:text-lg;
+  }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply text-transparent bg-clip-text bg-gradient-to-br from-gray-200 to-zinc-600;
+    @apply text-transparent bg-clip-text bg-gradient-to-br from-sky-400 to-sky-900 dark:from-slate-200 dark:to-slate-600;
+  }
+  .test {
+    @apply border border-red-500;
+  }
+  .btn {
+    @apply px-4 py-3 duration-200 rounded-md hover:bg-sky-300/50 hover:text-sky-700/80 dark:hover:bg-sky-700/50 dark:hover:text-sky-300/80;
   }
 }
