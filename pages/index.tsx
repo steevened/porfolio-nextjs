@@ -1,11 +1,8 @@
 import Layout from '@/components/layouts/Layout';
-import { Button } from '@mui/material';
 import Head from 'next/head';
-import Image from 'next/image';
-
 import { ReactElement } from 'react';
 import { CardHome, Services } from '@/components/home';
-import CardSticky from '@/components/home/CardSticky';
+import Tools from '@/components/home/Tools';
 
 const Home = () => {
   return (
@@ -29,12 +26,9 @@ const Home = () => {
             front-end development using React and TypeScript, I create amazing
             web applications to make the internet a better place.
           </p>
-          <div className="mt-24 text-center text-gradient">
-            <h3 className="title-2">Some of my favourite tools</h3>
-            <div className="w-full mt-12 test h-52">
-              <p className="text-center leading-[208px]">favourite tools</p>
-            </div>
-          </div>
+
+          {/* tools */}
+          <Tools />
           {/* services */}
           <Services />
         </div>
