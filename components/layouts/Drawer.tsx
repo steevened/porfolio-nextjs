@@ -1,18 +1,9 @@
 import { UIContext } from '@/context/ui';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+
+import { FC, PropsWithChildren, useContext, useEffect, useRef } from 'react';
 import {
-  FC,
-  PropsWithChildren,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import {
-  GithubLogo,
-  LinkedinLogo,
   MoonIcon,
   MoonIconOut,
   SunIcon,
@@ -107,19 +98,6 @@ const Drawer: FC<PropsWithChildren> = ({ children }) => {
             onClick={() => setTheme('dark')}
           >
             {theme === 'dark' ? <MoonIconOut /> : <MoonIcon />}
-          </button>
-        </div>
-        <div className="flex justify-center gap-2 mt-4">
-          <button className="btn">
-            <a href="https://www.linkedin.com/in/steevened/" target="_blank">
-              <LinkedinLogo />
-            </a>
-          </button>
-
-          <button className="btn">
-            <a href="https://github.com/steevened" target="_blank">
-              <GithubLogo />
-            </a>
           </button>
         </div>
       </div>

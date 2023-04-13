@@ -21,6 +21,12 @@
   .title-3 {
     @apply text-xl font-semibold  md:text-2xl;
   }
+  .subtitle-1 {
+    @apply text-lg font-semibold  md:text-xl;
+  }
+  .subtitle-2 {
+    @apply text-base font-medium  md:text-lg;
+  }
 }
 
 @layer utilities {

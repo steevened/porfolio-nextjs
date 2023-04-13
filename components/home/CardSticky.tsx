@@ -4,6 +4,7 @@ import NavbarLinks from '../molecules/NavbarLinks';
 import { UIContext } from '@/context/ui';
 import { gsap } from 'gsap';
 import Link from 'next/link';
+import { Brand } from '../atoms/Brand';
 
 const CardSticky = () => {
   const { isNavbarSticky } = useContext(UIContext);
@@ -33,11 +34,16 @@ const CardSticky = () => {
   return (
     <div
       ref={cardRef}
-      className={`z-30 flex items-center fixed w-10/12 top-10 px-5 py-3 rounded-2xl max-w-xl -translate-x-1/2 left-1/2 bg-white/75 dark:bg-black/75 backdrop-blur-md dark:shadow-app-shadow  shadow-app-shadow-light`}
+      className={`z-30 flex items-center justify-between fixed w-10/12 top-3 px-5 py-3 rounded-2xl max-w-xl -translate-x-1/2 left-1/2 bg-white/75 dark:bg-black/75 backdrop-blur-sm dark:shadow-app-shadow  shadow-app-shadow-light`}
     >
-      <Link href="/" className="grow">
+      <div className="">
         <Avatar />
-      </Link>
+      </div>
+
+      <div className="sm:hidden">
+        <Brand />
+      </div>
+
       <NavbarLinks />
     </div>
   );

@@ -4,6 +4,7 @@ import { UIContext } from '@/context/ui';
 import Drawer from './Drawer';
 import Overlay from './Overlay';
 import CardSticky from '../home/CardSticky';
+import Footer from './Footer';
 
 const Layout = ({ children }: { children: ReactNode }) => {
   const { sideMenuOpen } = useContext(UIContext);
@@ -22,6 +23,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       >
         {children}
       </main>
+      <Footer />
     </div>
   );
 };
