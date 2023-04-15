@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Description from '@/components/about/Description';
 import Stack from '@/components/about/Stack';
 import Experience from '@/components/about/Experience';
+import Education from '@/components/about/Education';
 
 const About: NextPageWithLayout = () => {
   return (
@@ -30,6 +31,7 @@ const About: NextPageWithLayout = () => {
         <div className="flex flex-col mt-24 gap-14">
           <Stack />
           <Experience />
+          <Education />
         </div>
         {/* <DetailsCard className="mt-10" /> */}
 

@@ -66,7 +66,7 @@ const Drawer: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div
-      className="fixed inset-y-0 z-50 bg-zinc-100 dark:bg-app-gray shadow-app-bottom-light dark:shadow-app-bottom w-80"
+      className="fixed inset-y-0 z-50 bg-slate-200 dark:bg-app-gray shadow-app-bottom-light dark:shadow-app-bottom w-80"
       ref={navbarMobileRef}
     >
       <div className="flex flex-col gap-3 px-5 py-3 ">

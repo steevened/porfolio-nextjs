@@ -10,7 +10,7 @@ export const CardHome = () => {
       <Avatar />
       <div className="flex flex-col justify-center gap-3 bg-transparent text-start">
         <Brand />
-        <h2 className="flex items-center text-sm text-gray-400 md:text-lg">
+        <h2 className="flex items-center text-sm text-slate-700 dark:text-slate-300 md:text-lg">
           Web Developer at{' '}
           <span className="px-2">
             <AcademloIcon />

@@ -35,7 +35,7 @@ const tools: Tool[] = [
 const Tools = () => {
   return (
     <div className="mt-24 text-center text-gradient">
-      <h3 className="title-2">Some of my favourite tools</h3>
+      <h3 className="mb-5 title-2">Some of my favourite tools</h3>
       <ToolsContainer>
         {tools.map((tool) => (
           <ToolItem icon={tool.icon} name={tool.name} key={tool.name} />

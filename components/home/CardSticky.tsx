@@ -34,7 +34,7 @@ const CardSticky = () => {
   return (
     <div
       ref={cardRef}
-      className={`z-30 flex items-center justify-between fixed w-10/12 top-3 px-5 py-3 rounded-2xl max-w-xl -translate-x-1/2 left-1/2 bg-white/75 dark:bg-black/75 backdrop-blur-sm dark:shadow-app-shadow  shadow-app-shadow-light`}
+      className={`z-30 flex items-center justify-between fixed w-10/12 top-3 px-5 py-3 rounded-2xl max-w-xl -translate-x-1/2 left-1/2 bg-white/80 dark:bg-black/80 backdrop-blur-sm dark:shadow-app-shadow  shadow-app-shadow-light`}
     >
       <div className="">
         <Avatar />

@@ -7,7 +7,8 @@ import { SessionContextProvider, Session } from '@supabase/auth-helpers-react';
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { UIProvider } from '@/context/ui';
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider as ThemeDarkModeProvider } from 'next-themes';
+import { ThemeProvider } from '@material-tailwind/react';
 // import { Database } from '../database.types';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -28,8 +29,10 @@ export default function App({
   const getLayout = Component.getLayout ?? ((page: ReactElement) => page);
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system">
-      <UIProvider>{getLayout(<Component {...pageProps} />)}</UIProvider>
+    <ThemeProvider>
+      <ThemeDarkModeProvider attribute="class" defaultTheme="system">
+        <UIProvider>{getLayout(<Component {...pageProps} />)}</UIProvider>
+      </ThemeDarkModeProvider>
     </ThemeProvider>
   );
 }
