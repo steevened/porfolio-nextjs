@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { AcademloIcon, ReactIcon } from '../svg/Svg';
+import Card from '../molecules/Card';
 
 interface Experience {
   logo: ReactElement;
@@ -50,10 +51,7 @@ const Experience = () => {
 
       <div className="space-y-10 ">
         {experiences.map((experience) => (
-          <div
-            key={experience.company}
-            className="relative w-full px-4 py-6 duration-200 rounded-md shadow-app-shadow-light dark:shadow-app-shadow bg-gradient-to-bl from-slate-50 to-slate-100 dark:from-app-gray dark:to-app-gray hover:scale-105 after:absolute after:inset-0 after:shadow-md after:rounded-md after:pointer-events-none"
-          >
+          <Card key={experience.company}>
             <div>
               <div className="flex items-center gap-2 ">
                 <div>{experience.logo}</div>
@@ -93,7 +91,7 @@ const Experience = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
     </div>

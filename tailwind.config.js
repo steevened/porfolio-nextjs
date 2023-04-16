@@ -11,6 +11,12 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
+      keyframes: {
+        scale: {
+          '0%, 100%': { transform: 'scale(1.00)' },
+          '50%': { transform: 'scale(1.02)' },
+        },
+      },
       colors: {
         sky: {
           50: '#f0f9ff',
@@ -56,7 +62,9 @@ module.exports = withMT({
       },
       animation: {
         'spin-slow': 'spin 5s linear infinite',
+        scale: 'scale 5s ease-in-out infinite',
       },
+
       backgroundImage: {
         light: 'url("../public/bg.png")',
         dark: 'url("../public/bg.svg")',

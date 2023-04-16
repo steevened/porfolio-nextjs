@@ -17,7 +17,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <CardSticky />
 
       <main
-        className={`max-w-3xl px-5 mx-auto duration-500 pt-24  ${
+        className={`max-w-4xl px-5 mx-auto duration-500 pt-24  ${
           sideMenuOpen && 'translate-x-5'
         }`}
       >

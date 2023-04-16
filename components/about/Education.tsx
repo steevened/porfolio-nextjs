@@ -1,39 +1,83 @@
-import { FullStackOpenLogo } from '../svg/Svg';
+import { ReactElement } from 'react';
+import { AcademloIcon, FreeCodeCampLogo, FullStackOpenLogo } from '../svg/Svg';
+import Card from '../molecules/Card';
+
+interface Education {
+  logo: ReactElement;
+  course: string;
+  university: string;
+  universityLink?: string;
+  duration: string;
+  content: string;
+}
+
+const educations: Education[] = [
+  {
+    logo: <FullStackOpenLogo />,
+    course: 'Full-Stack Open',
+    university: 'University of Helsinki - Online',
+    universityLink: 'https://fullstackopen.com/en/',
+    duration: 'Aug 2022 - Present',
+    content:
+      'JavaScript, Node.js, Express, React, MongoDB, Jest, Redux, Context API. TypeScript, GraphQL, React Native.',
+  },
+  {
+    logo: <AcademloIcon className="w-16 h-16" />,
+    course: 'Academlo Full-Stack Web Development',
+    university: 'Academlo - Online',
+    universityLink: 'https://academlo.com',
+    duration: 'Aug 2022 - Present',
+    content:
+      'Fundamentals of web development, HTML, CSS, Javascript, ReactJS, Redux, NodeJS, Express, PostgreSQL, Sequelize, Git.',
+  },
+  {
+    logo: <FreeCodeCampLogo />,
+    course: 'Front End Web Development',
+    university: 'Free Code Camp',
+    universityLink: 'https://www.freecodecamp.org/',
+    duration: 'May 2022 - Sep 2022',
+    content:
+      'Algorithms and data structure, HTML, CSS, JavaScript, Responsive Web Design.',
+  },
+];
 
 const Education = () => {
   return (
     <div>
       <h3 className="mb-8 title-3">My Education</h3>
-      <div className="relative w-full px-4 py-6 duration-200 rounded-md shadow-app-shadow-light dark:shadow-app-shadow bg-gradient-to-bl from-slate-50 to-slate-100 dark:from-app-gray dark:to-app-gray hover:scale-105 after:absolute after:inset-0 after:shadow-md after:rounded-md after:pointer-events-none">
-        <div className="flex items-center gap-2 ">
-          <div className="">
-            <FullStackOpenLogo />
-          </div>
-          <div className="flex flex-col items-start justify-between w-full md:flex-row-reverse">
-            <p className="text-sm font-semibold whitespace-nowrap">
-              Aug 2022 - Present
-            </p>
-            <div>
-              <h3 className="font-semibold md:text-xl text-gradient ">
-                Full-Stack Open
-              </h3>
-              <a
-                target="_blank"
-                href="https://fullstackopen.com/en/"
-                className="pb-1 text-base duration-200 text-sky-400 hover:text-sky-600 hover:cursor-pointer"
-              >
-                University of Helsinki - Online
-              </a>
-              <div className="mt-2">
-                <p className="text-sm">
-                  <span className="font-medium">Course Content: </span>
-                  JavaScript, Node.js, Express, React, MongoDB, Jest, Redux,
-                  Context API. TypeScript, GraphQL, React Native.
+
+      <div className="space-y-10 ">
+        {educations.map((education) => (
+          <Card key={education.university}>
+            <div className="flex items-center gap-2">
+              <div className="">{education.logo}</div>
+              <div className="flex flex-col items-start justify-between w-full md:flex-row-reverse">
+                <p className="text-sm font-semibold whitespace-nowrap">
+                  {education.duration}
                 </p>
+                <div>
+                  <h3 className="font-semibold md:text-xl text-gradient ">
+                    {education.course}
+                  </h3>
+                  <a
+                    target="_blank"
+                    href={education.universityLink}
+                    className="pb-1 text-base duration-200 text-sky-400 hover:text-sky-600 hover:cursor-pointer"
+                  >
+                    {education.university}
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+            {/*  */}
+            <div className="mt-2">
+              <p className="text-sm">
+                <span className="font-medium">Course Content: </span>
+                {education.content}
+              </p>
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   );
