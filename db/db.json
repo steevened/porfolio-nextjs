@@ -1,0 +1,71 @@
+{
+  "res": {
+    "works": [
+      {
+        "id": 1,
+        "name": "Para Cuando",
+        "title": "Vote for Your City's Next Big Event with Para Cuando",
+        "technologies": "NextJS, TypeScript, Tailwindcss, SWR, Formik, Yup, Context API.",
+        "description": "some description",
+        "images": [
+          "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/pc1_bbori3.webp",
+          "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/pc2_thmqsm.webp"
+        ],
+        "links": [
+          {
+            "name": "Live Site",
+            "url": "https://paracuando.vercel.app/"
+          },
+          {
+            "name": "Github Repo",
+            "url": "https://github.com/steevened/para-cuando"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "GitFavorites",
+        "title": "GitFavorites: A Minimalistic App to Manage Your Favorite GitHub Profiles",
+        "technologies": "NextJS, TypeScript, Tailwindcss, React Query, GitHub API.",
+        "description": "some description",
+        "images": [
+          "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/finder1_qmkqrj.webp",
+          "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/finder2_pwhbvj.webp",
+          "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/finder3_h1l2ev.webp"
+        ],
+        "links": [
+          {
+            "name": "Live Site",
+            "url": "https://gitfinderx.netlify.app/"
+          },
+          {
+            "name": "Github Repo",
+            "url": "https://github.com/steevened/git-finder"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "TechCommerce",
+        "title": "Your One-Stop Shop for the Latest Gadgets and Electronics",
+        "technologies": "NextJS, TypeScript, Tailwindcss, React Query, Static Site Generation, Thrid Party API.",
+        "description": "some description",
+        "images": [
+          "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/tc1_ktjybq.webp",
+          "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/tc2_irbsee.webp",
+          "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/tc3_toveny.webp"
+        ],
+        "links": [
+          {
+            "name": "Live Site",
+            "url": "https://gitfinderx.netlify.app/"
+          },
+          {
+            "name": "Github Repo",
+            "url": "https://github.com/steevened/git-finder"
+          }
+        ]
+      }
+    ]
+  }
+}
