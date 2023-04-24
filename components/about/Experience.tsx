@@ -47,7 +47,7 @@ const experiences: Experience[] = [
 const Experience = () => {
   return (
     <div>
-      <h3 className="mb-8 title-3">My Experience</h3>
+      <h3 className="mb-8 text-3xl font-semibold md:text-4xl">My Experience</h3>
 
       <div className="space-y-10 ">
         {experiences.map((experience) => (
@@ -60,18 +60,18 @@ const Experience = () => {
                     {experience.duration}
                   </p>
                   <div>
-                    <h3 className="font-semibold md:text-xl text-gradient ">
+                    <h3 className="font-semibold md:text-xl ">
                       {experience.position}
                     </h3>
                     <a
                       target="_blank"
                       href={experience.companyLink}
-                      className="pb-1 text-base duration-200 text-sky-400 hover:text-sky-600 hover:cursor-pointer"
+                      className="block pb-1 text-base duration-200 text-sky-400 hover:text-sky-600 hover:cursor-pointer"
                     >
                       {experience.company}
                     </a>
                     {experience.place && (
-                      <p className="text-sm">{experience.place}</p>
+                      <p className="block text-sm">{experience.place}</p>
                     )}
                   </div>
                 </div>

@@ -41,7 +41,7 @@ const Navbar: FC = () => {
         <Link href="/" className="">
           <Button
             variant="text"
-            className="text-lg hover:bg-sky-300/50 hover:text-sky-700/80 dark:hover:bg-sky-700/50 dark:hover:text-sky-300/80"
+            className="text-sm md:text-lg whitespace-nowrap hover:bg-sky-300/50 hover:text-sky-700/80 dark:hover:bg-sky-700/50 dark:hover:text-sky-300/80"
           >
             STEVEN ELIAS
           </Button>

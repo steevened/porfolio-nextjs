@@ -76,7 +76,9 @@ const tools: Tool[] = [
 const Stack = () => {
   return (
     <div>
-      <h3 className="mb-8 title-3">My Tools and Technologies</h3>
+      <h3 className="mb-8 text-3xl font-semibold md:text-4xl">
+        My Tools and Technologies
+      </h3>
       <ToolsContainer>
         {tools.map((tool) => (
           <ToolItem key={tool.name} icon={tool.icon} name={tool.name} />

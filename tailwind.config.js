@@ -43,6 +43,8 @@ module.exports = withMT({
           900: '#161e2e',
         },
         'app-gray': '#101010',
+        'gradient-teal': '#477ef0',
+        'gradient-purple': '#e34b9e',
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
