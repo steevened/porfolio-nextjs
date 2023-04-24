@@ -35,8 +35,6 @@ const About: NextPageWithLayout = () => {
         </div>
         {/* <DetailsCard className="mt-10" /> */}
 
-        {/* <SkillsCards /> */}
-
         {/* <div className="flex flex-col items-center justify-center mx-auto mt-10">
             <h4 className="text-gradient title-2">My current strike</h4>
 

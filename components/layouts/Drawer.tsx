@@ -12,6 +12,7 @@ import {
   SystemOut,
 } from '../svg/Svg';
 import { gsap } from 'gsap';
+import { Button } from '@material-tailwind/react';
 
 interface Props {}
 
@@ -66,7 +67,7 @@ const Drawer: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div
-      className="fixed inset-y-0 z-50 bg-slate-200 dark:bg-app-gray shadow-app-bottom-light dark:shadow-app-bottom w-80"
+      className="fixed inset-y-0 z-50 bg-blue-gray-100 dark:bg-app-gray shadow-app-bottom-light dark:shadow-app-bottom w-80"
       ref={navbarMobileRef}
     >
       <div className="flex flex-col gap-3 px-5 py-3 ">
@@ -80,25 +81,28 @@ const Drawer: FC<PropsWithChildren> = ({ children }) => {
             {item.name}
           </Link>
         ))}
-        <div className="flex justify-between w-full text-center duration-100 rounded-sm dark:shadow-app-shadow shadow-app-shadow-light ">
-          <button
+        <div className="flex justify-between w-full mt-5 text-center duration-100 rounded-sm dark:shadow-app-shadow shadow-app-shadow-light ">
+          <Button
+            variant="text"
             onClick={() => setTheme('system')}
             className="flex items-center justify-center flex-1 btn"
           >
             {theme === 'system' ? <SystemOut /> : <SystemIcon />}
-          </button>
-          <button
+          </Button>
+          <Button
+            variant="text"
             className="flex items-center justify-center flex-1 btn"
             onClick={() => setTheme('light')}
           >
             {theme === 'light' ? <SunIconOut /> : <SunIcon />}
-          </button>
-          <button
+          </Button>
+          <Button
+            variant="text"
             className="flex items-center justify-center flex-1 btn"
             onClick={() => setTheme('dark')}
           >
             {theme === 'dark' ? <MoonIconOut /> : <MoonIcon />}
-          </button>
+          </Button>
         </div>
       </div>
     </div>

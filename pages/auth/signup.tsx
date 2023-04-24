@@ -1,6 +1,6 @@
 import { ArrowLeftIcon, SecureBtn } from '@/components/svg/Svg';
-import signUp from '@/lib/firebase/auth/signUp';
-import { supabase } from '@/lib/supabase/supabase';
+// import signUp from '@/lib/firebase/auth/signUp';
+// import { supabase } from '@/lib/supabase/supabase';
 import { Button } from '@mui/material';
 import { useRouter } from 'next/router';
 import { EventHandler, useState } from 'react';
@@ -23,17 +23,17 @@ const SignUp = () => {
       password,
     };
 
-    try {
-      const response = await supabase.auth.signUp(data);
-      if (response.error) throw response.error;
-      const userID = response.data.user?.id;
-      console.log(userID);
-      setEmail('');
-      setPassword('');
-      router.push('/auth/login');
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const response = await supabase.auth.signUp(data);
+    //   if (response.error) throw response.error;
+    //   const userID = response.data.user?.id;
+    //   console.log(userID);
+    //   setEmail('');
+    //   setPassword('');
+    //   router.push('/auth/login');
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   return (

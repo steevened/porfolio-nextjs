@@ -1,5 +1,5 @@
 import { ArrowLeftIcon, SecureBtn } from '@/components/svg/Svg';
-import { supabase } from '@/lib/supabase/supabase';
+// import { supabase } from '@/lib/supabase/supabase';
 import { Button } from '@mui/material';
 import { useUser } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/router';
@@ -23,17 +23,17 @@ const Login = () => {
       password,
     };
 
-    try {
-      const response = await supabase.auth.signInWithPassword(data);
-      if (response.error) throw response.error;
-      const userID = response.data.user?.id;
-      console.log(userID);
-      setEmail('');
-      setPassword('');
-      router.push('/dashboard');
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const response = await supabase.auth.signInWithPassword(data);
+    //   if (response.error) throw response.error;
+    //   const userID = response.data.user?.id;
+    //   console.log(userID);
+    //   setEmail('');
+    //   setPassword('');
+    //   router.push('/dashboard');
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   const user = useUser();

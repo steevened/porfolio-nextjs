@@ -23,7 +23,7 @@ export default function App({
   Component,
   pageProps,
 }: AppPropsWithLayout<{ initialSession: Session }>) {
-  const [supabaseClient] = useState(() => createBrowserSupabaseClient());
+  // const [supabaseClient] = useState(() => createBrowserSupabaseClient());
   const queryClient = new QueryClient();
 
   const getLayout = Component.getLayout ?? ((page: ReactElement) => page);
