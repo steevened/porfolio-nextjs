@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AboutIcon, ArrowLeftIcon } from '../svg/Svg';
 import { ReactNode } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
-import { auth } from '@/lib/firebase/config';
+// import { auth } from '@/lib/firebase/config';
 import { useRouter } from 'next/router';
 import { supabase } from '../../lib/supabase/supabase';
 
@@ -16,11 +16,11 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
     setAnchorEl(null);
   };
 
-  const handleLogOut = () => {
-    supabase.auth.signOut();
-    handleClose();
-    router.push('/auth/login');
-  };
+  // const handleLogOut = () => {
+  //   supabase.auth.signOut();
+  //   handleClose();
+  //   router.push('/auth/login');
+  // };
 
   const router = useRouter();
 
@@ -56,11 +56,11 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
               'aria-labelledby': 'basic-button',
             }}
           >
-            <MenuItem onClick={handleLogOut}>Logout</MenuItem>
+            {/* <MenuItem onClick={handleLogOut}>Logout</MenuItem> */}
           </Menu>
         </div>
       </div>
-      <main className="min-h-screen h-full max-w-4xl py-24 mx-5 md:mx-auto">
+      <main className="h-full max-w-4xl min-h-screen py-24 mx-5 md:mx-auto">
         {children}
       </main>
     </div>

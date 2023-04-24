@@ -5,12 +5,12 @@ import AddCard from '../../../components/atoms/Cards/AddCard';
 import { Button } from '@mui/material';
 import Input from '@/components/atoms/inputs/Input';
 import Image from 'next/image';
-import CardHovered from '@/components/atoms/Cards/CardHovered';
-import { supabase } from '../../../lib/supabase/supabase';
+// import CardHovered from '@/components/atoms/Cards/CardHovered';
+// import { supabase } from '../../../lib/supabase/supabase';
 import { LoadingIcon } from '@/components/svg/Svg';
 import { Skill } from '@/lib/interfaces/api.interface';
 import SkillsCards from '@/components/skills/SkillsCards';
-import usePortfolioMutation from '../../../lib/hooks/useMutation';
+// import usePortfolioMutation from '../../../lib/hooks/useMutation';
 
 const Skills: NextPageWithLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -21,7 +21,7 @@ const Skills: NextPageWithLayout = () => {
   // get data
   const [data, setData] = useState<Skill[]>([]);
 
-  const mutatePortfolio = usePortfolioMutation('skills', data);
+  // const mutatePortfolio = usePortfolioMutation('skills', data);
 
   // handle Image Upload
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -35,38 +35,27 @@ const Skills: NextPageWithLayout = () => {
 
     setIsBtnLoading(true);
     // upload the image
-    try {
-      const { data: fileData, error: fileError } = await supabase.storage
-        .from('skills')
-        .upload(`skills/${file?.name}${new Date().getTime()}`, file!);
+    // try {
+    //   const { data: fileData, error: fileError } = await supabase.storage
+    //     .from('skills')
+    //     .upload(`skills/${file?.name}${new Date().getTime()}`, file!);
 
-      if (fileError) {
-        throw fileError;
-      }
-      if (fileData) {
-        const resp = supabase.storage
-          .from('skills')
-          .getPublicUrl(fileData.path);
-        const publicUrl = resp.data.publicUrl;
+    //   if (fileError) {
+    //     throw fileError;
+    //   }
+    //   if (fileData) {
+    //     const resp = supabase.storage
+    //       .from('skills')
+    //       .getPublicUrl(fileData.path);
+    //     const publicUrl = resp.data.publicUrl;
 
-        setData([...data, { name, image_url: publicUrl }]);
+    //     setData([...data, { name, image_url: publicUrl }]);
 
-        mutatePortfolio.mutate();
-
-        // const { data: skillData, error: skillError } = await supabase
-        //   .from('skills')
-        //   .insert({ name, image_url: publicUrl })
-        //   .select();
-        // if (skillError) {
-        //   throw skillError;
-        // }
-
-        // setData([...skillData, ...data] as Skill[]);
-      }
-      // console.log(imageUrl);
-    } catch (error) {
-      console.log(error);
-    }
+    //     mutatePortfolio.mutate();
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    // }
 
     setName('');
     setFile(null);
@@ -76,7 +65,7 @@ const Skills: NextPageWithLayout = () => {
 
   return (
     <div className="">
-      <div className="text-center">
+      {/* <div className="text-center">
         <h1 className="title-2 md:text-4xl text-gradient">
           Skills and Technologies
         </h1>
@@ -159,7 +148,7 @@ const Skills: NextPageWithLayout = () => {
             </div>
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
