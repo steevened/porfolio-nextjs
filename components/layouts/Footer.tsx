@@ -1,3 +1,4 @@
+import { Button } from '@material-tailwind/react';
 import { GithubLogo, LinkedinLogo } from '../svg/Svg';
 
 const Footer = () => {
@@ -7,20 +8,20 @@ const Footer = () => {
     <div className="sticky bottom-0 px-5 py-10 bg-white shadow-app-top-light dark:shadow-app-top dark:bg-black md:px-10 text-slate-800 dark:text-slate-300">
       <div className="flex items-center justify-between ">
         <div>
-          <p className="font-medium">© {year} Steven Elias</p>
+          <p className="font-medium text-sky-400">© {year} Steven Elias</p>
         </div>
         <div className="flex items-center justify-center gap-2 ">
-          <button className="btn">
+          <Button variant="text">
             <a href="https://www.linkedin.com/in/steevened/" target="_blank">
               <LinkedinLogo />
             </a>
-          </button>
+          </Button>
 
-          <button className="btn">
+          <Button variant="text">
             <a href="https://github.com/steevened" target="_blank">
               <GithubLogo />
             </a>
-          </button>
+          </Button>
         </div>
       </div>
     </div>

@@ -21,10 +21,14 @@ const Home = () => {
         <CardHome />
         <div className="">
           <p className="px-5 text-base font-medium leading-10 text-justify sm:text-xl text-slate-700 dark:text-slate-200">
-            Welcome to my digital garden. Here I share what I&apos;m learning
-            about shipping great products. <br /> As I&apos;m specialised in
-            front-end development using React and TypeScript, I create amazing
-            web applications to make the internet a better place.
+            Welcome to my digital garden, where I cultivate my passion for
+            building exceptional digital products. With expertise in front-end
+            development using React and TypeScript, I craft beautiful and
+            functional web applications that enhance the online experience.
+            Through this space, I&apos;ll be sharing insights into my learning
+            journey and the techniques I employ to create great products. So
+            join me on this exciting adventure, as we explore the endless
+            possibilities of the digital world together.
           </p>
 
           {/* tools */}

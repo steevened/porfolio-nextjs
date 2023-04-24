@@ -5,6 +5,7 @@ import { FC, Fragment, useContext, useEffect, useRef, useState } from 'react';
 import Drawer from './Drawer';
 import NavbarLinks from '../molecules/NavbarLinks';
 import { gsap } from 'gsap';
+import { Button } from '@material-tailwind/react';
 
 const Navbar: FC = () => {
   const { isNavbarSticky } = useContext(UIContext);
@@ -36,12 +37,15 @@ const Navbar: FC = () => {
       ref={navbarRef}
       className={`fixed inset-x-0 z-30 flex items-center gap-5 p-5 bg-white/75 dark:bg-black/75 backdrop-blur-md dark:shadow-app-bottom shadow-app-bottom-light duration-500`}
     >
-      <div className="font-semibold grow ">
-        <div>
-          <Link href="/" className="btn">
+      <div className="font-semibold grow">
+        <Link href="/" className="">
+          <Button
+            variant="text"
+            className="text-lg hover:bg-sky-300/50 hover:text-sky-700/80 dark:hover:bg-sky-700/50 dark:hover:text-sky-300/80"
+          >
             STEVEN ELIAS
-          </Link>
-        </div>
+          </Button>
+        </Link>
       </div>
       <NavbarLinks />
     </nav>
