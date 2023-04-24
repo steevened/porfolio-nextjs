@@ -25,7 +25,7 @@ export const Services = () => {
   return (
     <div className="mt-24 space-y-14">
       <div>
-        <h3 className="font-semibold title-2 text-gradient">
+        <h3 className="text-3xl font-semibold md:text-4xl">
           Services I provide
         </h3>
         <h4 className="mt-2 text-lg font-medium md:mt-5 md:text-xl">
@@ -37,7 +37,7 @@ export const Services = () => {
       <div className="space-y-5">
         {services.map((service) => (
           <div key={service.title}>
-            <h4 className="text-gradient subtitle-1">{service.title}</h4>
+            <h4 className="text-xl font-semibold">{service.title}</h4>
 
             <h5 className="mt-2 subtitle-2">{service.subtitle}</h5>
             <p className="mt-2">{service.description}</p>

@@ -44,7 +44,7 @@ const educations: Education[] = [
 const Education = () => {
   return (
     <div>
-      <h3 className="mb-8 title-3">My Education</h3>
+      <h3 className="mb-8 text-3xl font-semibold md:text-4xl">My Education</h3>
 
       <div className="space-y-10 ">
         {educations.map((education) => (
@@ -56,13 +56,13 @@ const Education = () => {
                   {education.duration}
                 </p>
                 <div>
-                  <h3 className="font-semibold md:text-xl text-gradient ">
+                  <h3 className="font-semibold md:text-xl">
                     {education.course}
                   </h3>
                   <a
                     target="_blank"
                     href={education.universityLink}
-                    className="pb-1 text-base duration-200 text-sky-400 hover:text-sky-600 hover:cursor-pointer"
+                    className="block pb-1 text-base duration-200 text-sky-400 hover:text-sky-600 hover:cursor-pointer"
                   >
                     {education.university}
                   </a>

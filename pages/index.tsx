@@ -3,6 +3,9 @@ import Head from 'next/head';
 import { ReactElement } from 'react';
 import { CardHome, Services } from '@/components/home';
 import Tools from '@/components/home/Tools';
+import Experience from '@/components/about/Experience';
+import Education from '@/components/about/Education';
+import WorksCards from '@/components/works/WorksCards';
 
 const Home = () => {
   return (
@@ -31,10 +34,18 @@ const Home = () => {
             possibilities of the digital world together.
           </p>
 
-          {/* tools */}
-          <Tools />
-          {/* services */}
-          <Services />
+          <div className="space-y-32">
+            <Tools />
+            <Services />
+            <Experience />
+            <Education />
+            <div>
+              <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
+                Selected Works
+              </h2>
+              <WorksCards />
+            </div>
+          </div>
         </div>
       </section>
     </>
