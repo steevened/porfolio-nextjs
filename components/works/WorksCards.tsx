@@ -26,7 +26,7 @@ const WorksCards = () => {
           <div className="relative flex w-full max-w-xs overflow-hidden rounded-md shadow-lg bg-slate-300 dark:bg-slate-900 h-96 animate-scale">
             <div className="absolute w-2/3 shadow-lg left-4 top-3 -rotate-2 shadow-black/50">
               <Image
-                src={work.images[0]}
+                src={work.images.default[0]}
                 alt="para cuando project"
                 width={1000}
                 height={1000}
@@ -34,22 +34,22 @@ const WorksCards = () => {
             </div>
             <div
               className={`absolute w-2/3 shadow-lg right-2  -rotate-2 shadow-black/50 z-20 ${
-                !work.images[2] ? 'top-20' : 'top-10'
+                !work.images.default[2] ? 'top-20' : 'top-10'
               }`}
             >
               <Image
-                src={work.images[1]}
+                src={work.images.default[1]}
                 alt="para cuando project"
                 width={1000}
                 height={1000}
               />
             </div>
-            {work.images.length >= 3 && (
+            {work.images.default.length >= 3 && (
               <div
                 className={`absolute w-2/3 shadow-lg left-3  -rotate-2 shadow-black/50 bottom-5 z-10 `}
               >
                 <Image
-                  src={work.images[2]}
+                  src={work.images.default[2]}
                   alt="para cuando project"
                   width={1000}
                   height={1000}

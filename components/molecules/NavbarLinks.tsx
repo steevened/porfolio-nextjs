@@ -9,7 +9,7 @@ const NavbarLinks = () => {
   const [hoverIndex, setHoverIndex] = useState<number>(-1);
   const [routeIndex, setRouteIndex] = useState<number>(-1);
 
-  const { sideMenuOpen, toggleSideMenu } = useContext(UIContext);
+  const { toggleSideMenu } = useContext(UIContext);
 
   const router = useRouter();
   const { pathname } = router;
@@ -23,6 +23,9 @@ const NavbarLinks = () => {
         setRouteIndex(0);
         break;
       case '/works':
+        setRouteIndex(1);
+        break;
+      case '/works/[name]':
         setRouteIndex(1);
         break;
       case '/blogs':
@@ -47,10 +50,11 @@ const NavbarLinks = () => {
 
   const isHome = pathname === '/';
   const isAbout = pathname === '/about';
-  const isWorks = pathname === '/works';
+  const isWorks = pathname === '/works' || pathname === '/works/[name]';
   const isContact = pathname === '/contact';
-  const isBlogs = pathname === '/blogs';
+  const isBlogs = pathname.startsWith('/blogs');
 
+  console.log(routeIndex);
   return (
     <>
       <ul className="relative items-center hidden overflow-hidden font-medium sm:flex ">

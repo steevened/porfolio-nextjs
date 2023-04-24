@@ -30,6 +30,7 @@
     "react-github-calendar": "^3.4.0",
     "react-query": "^3.39.3",
     "react-transition-group": "^4.4.5",
+    "swiper": "^9.2.4",
     "typescript": "5.0.2"
   },
   "devDependencies": {
