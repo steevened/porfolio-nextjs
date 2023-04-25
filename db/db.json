@@ -97,6 +97,18 @@
           }
         ]
       }
+    ],
+    "blogs": [
+      {
+        "id": "animate-loading-skeleton-with-tailwind-css",
+        "name": "Animate Loading Skeleton with Tailwind CSS",
+        "date": "Abr 19, 2023"
+      },
+      {
+        "id": "free-database-for-developers",
+        "name": "Free Database for Developers",
+        "date": "Abr 24, 2023"
+      }
     ]
   }
 }
