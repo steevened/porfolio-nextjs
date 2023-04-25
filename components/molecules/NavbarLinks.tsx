@@ -31,6 +31,9 @@ const NavbarLinks = () => {
       case '/blogs':
         setRouteIndex(2);
         break;
+      case '/blogs/[id]':
+        setRouteIndex(2);
+        break;
       case '/contact':
         setRouteIndex(3);
         break;
@@ -54,7 +57,6 @@ const NavbarLinks = () => {
   const isContact = pathname === '/contact';
   const isBlogs = pathname.startsWith('/blogs');
 
-  console.log(routeIndex);
   return (
     <>
       <ul className="relative items-center hidden overflow-hidden font-medium sm:flex ">
