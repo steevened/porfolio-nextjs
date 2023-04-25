@@ -6,13 +6,22 @@
         "name": "Para Cuando",
         "title": "Vote for Your City's Next Big Event with Para Cuando",
         "technologies": "NextJS, TypeScript, Tailwindcss, SWR, Formik, Yup, Context API.",
-        "description": "some description",
+        "description": "Para Cuando is a platform for people in Queretaro, Mexico to vote on their favorite events in three categories: 'artistas y conciertos', 'marcas y tiendas', and 'torneos'. Users can browse events as guests, but must register to vote. Once registered, users can vote on events, post their own events, and see their voting history. The platform also allows users to set their favorite categories and profile picture. The project was built using TypeScript, NextJS, TailwindCSS, Formik, and SWR, with data from a third-party API provided by the backend team. I led the frontend team and was responsible for the majority of the development work.",
         "images": {
           "default": [
             "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/pc1_bbori3.webp",
             "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/pc2_thmqsm.webp"
           ],
-          "detailed": []
+          "detailed": [
+            "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682443658/portfolio/details/paracuando/pcd1_dirkhv.webp",
+            "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682443657/portfolio/details/paracuando/pcd2_jw3mkn.webp",
+            "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682443658/portfolio/details/paracuando/pcd3_lokniz.webp",
+            "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682443657/portfolio/details/paracuando/pcd4_gvajxi.webp",
+            "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682443657/portfolio/details/paracuando/pcd5_znmihw.webp",
+            "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682443657/portfolio/details/paracuando/pcd6_naants.webp",
+            "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682443658/portfolio/details/paracuando/pcd7_xgj0cz.webp",
+            "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682443658/portfolio/details/paracuando/pcd8_tp41sh.webp"
+          ]
         },
         "links": [
           {
@@ -30,7 +39,7 @@
         "name": "GitFavorites",
         "title": "GitFavorites: A Minimalistic App to Manage Your Favorite GitHub Profiles",
         "technologies": "NextJS, TypeScript, Tailwindcss, React Query, GitHub API.",
-        "description": "some description",
+        "description": "I created a GitHub profile finder app that lets you search for any public profile using query parameters. The app displays information about the user's followers, repositories, and contribution calendar. You can also save your favorite profiles and view them on a separate favorites page. The app has a simple and easy-to-use interface, and I used NextJS with TypeScript and TailwindCSS for the design. Additionally, the app includes a theme toggle that lets you switch between light and dark mode.",
         "images": {
           "default": [
             "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/finder1_qmkqrj.webp",
@@ -60,9 +69,9 @@
       {
         "id": 3,
         "name": "TechCommerce",
-        "title": "Your One-Stop Shop for the Latest Gadgets and Electronics",
+        "title": "The Ultimate Destination for All Your Tech Needs",
         "technologies": "NextJS, TypeScript, Tailwindcss, React Query, Static Site Generation, Thrid Party API.",
-        "description": "some description",
+        "description": "I built a fully functional ecommerce website where customers can browse and purchase a variety of tech products, including laptops, cellphones, televisions, and stoves. The website has a clean and intuitive design that allows users to easily navigate through different categories and products and filter them. To build the app, I used  NextJs along with Typescript for the UI and React Query with axios to communicate with the backend. Overall, I am proud to have created a professional and functional ecommerce website that delivers an excellent user experience.",
         "images": {
           "default": [
             "https://res.cloudinary.com/dysmgn1ew/image/upload/v1682359162/portfolio/tc1_ktjybq.webp",

@@ -139,13 +139,13 @@ export function ContactIconOut() {
   );
 }
 
-export function ArrowLeftIcon() {
+export function ArrowLeftIcon({ rotate = false }) {
   return (
     <svg
       fill="none"
       stroke="currentColor"
-      strokeWidth={1.5}
-      className="w-5 h-5"
+      strokeWidth={2}
+      className={`w-5 h-5 ${rotate && 'rotate-180'}`}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
