@@ -7,6 +7,7 @@ import db from '../../../db/db.json';
 import WorkSlider from '@/components/works/WorkSlider';
 import { Button } from '@material-tailwind/react';
 import Link from 'next/link';
+import { ArrowLeftIcon } from '@/components/svg/Svg';
 
 const ProjectPage: NextPageWithLayout = () => {
   const [project, setProject] = useState<any>();
@@ -32,25 +33,38 @@ const ProjectPage: NextPageWithLayout = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="my-5 md:my-10">
-        <h1 className="mt-5 title-1 text-gradient">{name}</h1>
+      <div className="relative my-5 md:my-10">
+        <div className="absolute md:left-10">
+          <Button
+            onClick={() => router.back()}
+            size="sm"
+            variant="text"
+            className="shadow-app-shadow-light dark:shadow-app-shadow"
+            color="blue-gray"
+          >
+            <ArrowLeftIcon rotate />
+          </Button>
+        </div>
+        <div className="text-center ">
+          <h1 className="mt-5 title-1 text-gradient">{name}</h1>
+        </div>
 
         <div className="mt-6 ">
-          <div className="mt-10 w-full lg:px-2 space-y-12">
-            <div className="w-full md:w-11/12 rounded-md overflow-hidden shadow-lg mx-auto">
+          <div className="w-full mt-10 space-y-12 lg:px-2">
+            <div className="w-full mx-auto overflow-hidden rounded-md shadow-lg md:w-11/12">
               <WorkSlider project={project} />
             </div>
             <div className="w-full">
               <p className="text-lg font-medium ">
-                <span className="font-bold text-xl">Tech used: </span>
+                <span className="text-xl font-bold">Tech used: </span>
                 {project?.technologies}
               </p>
-              <div className="mt-5 flex flex-col sm:flex-row gap-2">
+              <div className="flex flex-col gap-2 mt-5 sm:flex-row">
                 <Link href={project?.links[0].url || ''} target="_blank">
                   <Button
                     variant="filled"
                     color="light-blue"
-                    className="rounded-none w-full"
+                    className="w-full rounded-none"
                   >
                     Live Project
                   </Button>
@@ -59,14 +73,14 @@ const ProjectPage: NextPageWithLayout = () => {
                   <Button
                     variant="text"
                     color="blue-gray"
-                    className="rounded-none shadow-app-shadow-light dark:shadow-app-shadow w-full"
+                    className="w-full rounded-none shadow-app-shadow-light dark:shadow-app-shadow"
                   >
                     Visit Repo
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="w-full px-2 shadow-app-top-light dark:shadow-app-top py-5 text-lg font-medium">
+            <div className="w-full px-2 py-5 text-lg font-medium md:px-10 shadow-app-top-light dark:shadow-app-top">
               <p>{project?.description}</p>
             </div>
           </div>
