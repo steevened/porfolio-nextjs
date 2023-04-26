@@ -65,11 +65,19 @@ module.exports = withMT({
       animation: {
         'spin-slow': 'spin 5s linear infinite',
         scale: 'scale 5s ease-in-out infinite',
+        // 'gradient-x': 'gradient-x 15s ease infinite',
       },
 
       backgroundImage: {
         light: 'url("../public/dots-pattern.svg")',
         dark: 'url("../public/bg.svg")',
+      },
+      keyframes: {
+        'gradient-x': {
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
       },
     },
   },

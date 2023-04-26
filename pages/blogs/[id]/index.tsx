@@ -13,7 +13,7 @@ const BlogPerNamePage: NextPageWithLayout = () => {
   const { id } = router.query;
 
   useEffect(() => {
-    const blogById = db.res.blogs.find((blog) => blog.id === id);
+    const blogById = db.res.blogs.find((blog) => blog?.id === id);
     setBlog(blogById);
   }, [id]);
 
