@@ -6,6 +6,7 @@ import Tools from '@/components/home/Tools';
 import Experience from '@/components/about/Experience';
 import Education from '@/components/about/Education';
 import WorksCards from '@/components/works/WorksCards';
+import { BlogsList } from '@/components/blogs/BlogsList';
 
 const Home = () => {
   return (
@@ -44,6 +45,12 @@ const Home = () => {
                 Selected Works
               </h2>
               <WorksCards />
+            </div>
+            <div>
+              <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
+                Latest Posts
+              </h2>
+              <BlogsList />
             </div>
           </div>
         </div>

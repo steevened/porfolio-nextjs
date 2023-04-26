@@ -73,7 +73,7 @@ const TailwinSkeleton = () => {
               animation to the overlay element.
             </li>
           </ul>
-          <div className="grid py-10 mt-5 bg-white dark:bg-black shadow-app-shadow-light dark:shadow-app-shadow place-content-center">
+          <div className="grid py-10 mt-5 bg-white dark:bg-black shadow-app-shadow-light dark:shadow-app-shadow place-content-center overflow-hidden">
             <Gradient className="-translate-x-full animate-[gradient-x_2s_infinite]" />
           </div>
 
@@ -101,7 +101,7 @@ const TailwinSkeleton = () => {
               <span className="text-light-blue-600">before:</span> modifier.
             </li>
           </ul>
-          <div className="grid py-10 mt-5 bg-white dark:bg-black shadow-app-shadow-light dark:shadow-app-shadow place-content-center">
+          <div className="grid py-10 mt-5 bg-white dark:bg-black shadow-app-shadow-light dark:shadow-app-shadow place-content-center overflow-hidden">
             <LoaderSkeleton
               className="
               relative  
@@ -129,6 +129,10 @@ const TailwinSkeleton = () => {
               Hide the overlay while it&apos;s positioned outside the skeleton.
             </li>
             <li>Add a shadow to the skeleton.</li>
+            <li>
+              Add a border to the top of the overlay to simulate reflecting
+              light.
+            </li>
           </ul>
           <div className="grid py-10 mt-5 bg-white dark:bg-black shadow-app-shadow-light dark:shadow-app-shadow place-content-center">
             <LoaderSkeleton
