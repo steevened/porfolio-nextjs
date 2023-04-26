@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import db from '../../../db/db.json';
 import { useEffect, useState } from 'react';
 import TailwinSkeleton from '@/components/blogs/skeleton/TailwinSkeleton';
+import { FreeDB } from '@/components/blogs/databases/FreeDB';
 
 const BlogPerNamePage: NextPageWithLayout = () => {
   const [blog, setBlog] = useState<any>();
@@ -13,7 +14,7 @@ const BlogPerNamePage: NextPageWithLayout = () => {
   const { id } = router.query;
 
   useEffect(() => {
-    const blogById = db.res.blogs.find((blog) => blog.id === id);
+    const blogById = db.res.blogs.find((blog) => blog?.id === id);
     setBlog(blogById);
   }, [id]);
 
@@ -21,6 +22,8 @@ const BlogPerNamePage: NextPageWithLayout = () => {
     switch (blog?.id) {
       case 'animate-loading-skeleton-with-tailwind-css':
         return <TailwinSkeleton />;
+      case 'free-database-for-developers':
+        return <FreeDB />;
     }
   }
 
