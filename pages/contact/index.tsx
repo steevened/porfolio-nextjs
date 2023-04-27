@@ -1,7 +1,6 @@
 import { NextPageWithLayout } from '../_app';
 import { ReactElement } from 'react';
 import Layout from '@/components/layouts/Layout';
-import { Button, Input, Textarea } from '@material-tailwind/react';
 import { useTheme } from 'next-themes';
 import { ContactCard } from '@/components/molecules/ContactCard';
 
