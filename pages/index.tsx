@@ -7,6 +7,7 @@ import Experience from '@/components/about/Experience';
 import Education from '@/components/about/Education';
 import WorksCards from '@/components/works/WorksCards';
 import { BlogsList } from '@/components/blogs/BlogsList';
+import { ContactCard } from '@/components/molecules/ContactCard';
 
 const Home = () => {
   return (
@@ -51,6 +52,12 @@ const Home = () => {
                 Latest Posts
               </h2>
               <BlogsList />
+            </div>
+            <div className="text-center">
+              <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
+                Contact Me
+              </h2>
+              <ContactCard />
             </div>
           </div>
         </div>
