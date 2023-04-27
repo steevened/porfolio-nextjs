@@ -1,7 +1,8 @@
 import { ArrowLeftIcon, SecureBtn } from '@/components/svg/Svg';
+import { Button } from '@material-tailwind/react';
 // import signUp from '@/lib/firebase/auth/signUp';
 // import { supabase } from '@/lib/supabase/supabase';
-import { Button } from '@mui/material';
+// import { Button } from '@mui/material';
 import { useRouter } from 'next/router';
 import { EventHandler, useState } from 'react';
 
@@ -69,7 +70,7 @@ const SignUp = () => {
               fullWidth
               type="submit"
               variant="text"
-              endIcon={<ArrowLeftIcon />}
+              // endIcon={<ArrowLeftIcon />}
               className="px-6 py-2 text-gray-400 border-0 rounded focus:outline-none hover:text-white hover:bg-black shadow-app-shadow"
             >
               Sign Up
