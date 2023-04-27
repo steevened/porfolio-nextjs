@@ -26,7 +26,7 @@ const educations: Education[] = [
     course: 'Academlo Full-Stack Web Development',
     university: 'Academlo - Online',
     universityLink: 'https://academlo.com',
-    duration: 'Aug 2022 - Present',
+    duration: 'Aug 2022 - Feb 2023',
     content:
       'Fundamentals of web development, HTML, CSS, Javascript, ReactJS, Redux, NodeJS, Express, PostgreSQL, Sequelize, Git.',
   },

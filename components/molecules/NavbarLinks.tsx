@@ -1,15 +1,42 @@
 import { UIContext } from '@/context/ui';
-import { Button } from '@material-tailwind/react';
+import {
+  Button,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+} from '@material-tailwind/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
-import { MenuIcon } from '../svg/Svg';
+import {
+  MenuIcon,
+  MoonIcon,
+  MoonIconOut,
+  SunIcon,
+  SunIconOut,
+  SystemIcon,
+  SystemOut,
+} from '../svg/Svg';
+import { useTheme } from 'next-themes';
 
 const NavbarLinks = () => {
   const [hoverIndex, setHoverIndex] = useState<number>(-1);
   const [routeIndex, setRouteIndex] = useState<number>(-1);
 
   const { toggleSideMenu } = useContext(UIContext);
+  const { theme, setTheme } = useTheme();
+
+  const currentTheme = () => {
+    switch (theme) {
+      case 'light':
+        return <SunIconOut />;
+      case 'dark':
+        return <MoonIconOut />;
+      default:
+        return <SystemOut />;
+    }
+  };
 
   const router = useRouter();
   const { pathname } = router;
@@ -59,7 +86,7 @@ const NavbarLinks = () => {
 
   return (
     <>
-      <ul className="relative items-center hidden overflow-hidden font-medium sm:flex ">
+      <ul className="relative items-center hidden overflow-hidden font-medium md:flex">
         <li
           className={`absolute bg-sky-300/50 dark:bg-sky-700/50  h-full rounded-lg  duration-300 ease-out pointer-events-none w-1/4 ${
             hoverIndex === -1
@@ -153,30 +180,59 @@ const NavbarLinks = () => {
         </li>
       </ul>
       <div>
-        <Button variant="text" className="p-2" onClick={toggleSideMenu}>
-          <MenuIcon />
-        </Button>
+        <div className="hidden md:block ">
+          <Menu>
+            <MenuHandler>
+              <Button variant="text" size="sm" className=" aspect-square p-2">
+                {currentTheme()}
+              </Button>
+            </MenuHandler>
+            <MenuList className="p-1 min-w-min dark:bg-app-gray dark:border-none dark:shadow-app-shadow dark:text-blue-gray-200">
+              <MenuItem
+                role="button"
+                onClick={() => {
+                  setTheme('system');
+                }}
+                className={`flex items-center gap-2 w-28 ${
+                  theme === 'system' && 'font-semibold bg-blue-gray-50'
+                }`}
+              >
+                {theme === 'system' ? <SystemOut /> : <SystemIcon />}
+                System
+              </MenuItem>
+              <MenuItem
+                role="button"
+                onClick={() => {
+                  setTheme('dark');
+                }}
+                className={`flex items-center gap-2 w-28 ${
+                  theme === 'dark' && 'font-semibold bg-blue-gray-900'
+                }`}
+              >
+                {theme === 'dark' ? <MoonIconOut /> : <MoonIcon />}
+                Dark
+              </MenuItem>
+              <MenuItem
+                role="button"
+                onClick={() => {
+                  setTheme('light');
+                }}
+                className={`flex items-center gap-2 w-28 ${
+                  theme === 'light' && 'font-semibold bg-blue-gray-50'
+                }`}
+              >
+                {theme === 'light' ? <SunIconOut /> : <SunIcon />}
+                Light
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </div>
+        <div className="md:hidden">
+          <Button variant="text" className="p-2" onClick={toggleSideMenu}>
+            <MenuIcon />
+          </Button>
+        </div>
       </div>
-      {/* <div
-        role="button"
-        className="relative flex flex-col justify-between after:duration-200 after:rounded-sm w-7 h-7 menu-button after:absolute after:inset-0 after:scale-[1.5] after:hover:bg-sky-300/50 group after:hover:dark:bg-sky-700/80"
-      >
-        <div
-          className={`shadow-app-shadow-light-hover group-hover:border group-hover:border-sky-500   dark:shadow-app-shadow-hover  h-[1px] duration-200 ${
-            sideMenuOpen && 'rotate-45 translate-y-[13px] '
-          }`}
-        />
-        <div
-          className={`shadow-app-shadow-light-hover dark:shadow-app-shadow-hover group-hover:border group-hover:border-sky-500  h-[1px] duration-200 ${
-            sideMenuOpen && 'opacity-0'
-          }`}
-        />
-        <div
-          className={`shadow-app-shadow-light-hover dark:shadow-app-shadow-hover group-hover:border group-hover:border-sky-500  h-[1px] duration-200 ${
-            sideMenuOpen && '-rotate-45 -translate-y-[13px]'
-          }`}
-        />
-      </div> */}
     </>
   );
 };

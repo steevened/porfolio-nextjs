@@ -1,6 +1,6 @@
 export const Brand = () => {
   return (
-    <h1 className="max-[375px]:text-base text-xl bg-transparent -tracking-tight text-gradient md:title-2">
+    <h1 className="max-[375px]:text-base text-xl bg-transparent -tracking-tight text-gradient md:title-2 font-semibold">
       @STEEVENED
     </h1>
   );
