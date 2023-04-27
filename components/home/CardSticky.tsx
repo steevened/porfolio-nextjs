@@ -40,7 +40,7 @@ const CardSticky = () => {
         <Avatar />
       </div>
 
-      <div className="sm:hidden">
+      <div className="md:hidden">
         <Brand />
       </div>
 
