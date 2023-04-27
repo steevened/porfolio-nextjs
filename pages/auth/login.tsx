@@ -1,7 +1,8 @@
 import { ArrowLeftIcon, SecureBtn } from '@/components/svg/Svg';
+import { Button } from '@material-tailwind/react';
 // import { supabase } from '@/lib/supabase/supabase';
-import { Button } from '@mui/material';
-import { useUser } from '@supabase/auth-helpers-react';
+// import { Button } from '@mui/material';
+// import { useUser } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -36,7 +37,7 @@ const Login = () => {
     // }
   };
 
-  const user = useUser();
+  // const user = useUser();
 
   // console.log(user);
 
@@ -70,7 +71,7 @@ const Login = () => {
               fullWidth
               type="submit"
               variant="text"
-              endIcon={<ArrowLeftIcon />}
+              // endIcon={<ArrowLeftIcon />}
               className="px-6 py-2 text-gray-400 border-0 rounded focus:outline-none hover:text-white hover:bg-black shadow-app-shadow"
             >
               Log-in
@@ -81,7 +82,7 @@ const Login = () => {
               <div className="text-center sm:text-left whitespace-nowrap">
                 <Button
                   className="px-6 py-2 mx-5 text-sm font-normal text-gray-400 rounded-md hover:text-white hover:bg-black"
-                  startIcon={<SecureBtn />}
+                  // startIcon={<SecureBtn />}
                 >
                   Forgot Password
                 </Button>
