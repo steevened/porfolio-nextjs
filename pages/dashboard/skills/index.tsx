@@ -1,15 +1,10 @@
 import { NextPageWithLayout } from '../../_app';
 import DashboardLayout from '../../../components/layouts/DashboardLayout';
-import { FormEvent, ReactNode, useState, ChangeEvent, useEffect } from 'react';
-import AddCard from '../../../components/atoms/Cards/AddCard';
-import { Button } from '@mui/material';
-import Input from '@/components/atoms/inputs/Input';
-import Image from 'next/image';
+import { FormEvent, ReactNode, useState, ChangeEvent } from 'react';
+
 // import CardHovered from '@/components/atoms/Cards/CardHovered';
 // import { supabase } from '../../../lib/supabase/supabase';
-import { LoadingIcon } from '@/components/svg/Svg';
 import { Skill } from '@/lib/interfaces/api.interface';
-import SkillsCards from '@/components/skills/SkillsCards';
 // import usePortfolioMutation from '../../../lib/hooks/useMutation';
 
 const Skills: NextPageWithLayout = () => {
