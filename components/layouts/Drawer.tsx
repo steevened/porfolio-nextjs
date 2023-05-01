@@ -13,6 +13,7 @@ import {
 } from '../svg/Svg';
 import { gsap } from 'gsap';
 import { Button } from '@material-tailwind/react';
+import { useRouter } from 'next/router';
 
 interface Props {}
 
@@ -42,8 +43,9 @@ const menuItems: MenuItem[] = [
 
 const Drawer: FC<PropsWithChildren> = ({ children }) => {
   const navbarMobileRef = useRef<HTMLDivElement>(null);
-  const { sideMenuOpen } = useContext(UIContext);
+  const { sideMenuOpen, closeSideMenu } = useContext(UIContext);
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
 
   function animateNavbar() {
     // Get a reference to the second navbar element
@@ -67,38 +69,42 @@ const Drawer: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div
-      className="fixed inset-y-0 z-50 bg-blue-gray-100 dark:bg-app-gray shadow-app-bottom-light dark:shadow-app-bottom w-80"
+      className="fixed inset-y-0 z-50 bg-blue-gray-100 dark:bg-app-gray shadow-app-bottom-light dark:shadow-app-bottom w-80 flex items-center justify-center"
       ref={navbarMobileRef}
     >
-      <div className="flex flex-col gap-3 px-5 py-3 ">
+      <div className="flex flex-col gap-3 px-5 py-3  w-full">
         {menuItems.map((item, i) => (
-          <Link
+          <Button
             key={i}
-            href={item.href}
-            className="w-full py-3 text-center duration-100 rounded-sm hover:bg-zinc-200 dark:hover:bg-black shadow-app-shadow-light dark:shadow-app-shadow hover:shadow-app-shadow-hover sm:hidden"
-            role="button"
+            onClick={() => {
+              router.push(item.href);
+              closeSideMenu();
+            }}
+            variant="text"
+            fullWidth
+            className="rounded-sm shadow-app-shadow-light dark:shadow-app-shadow"
           >
             {item.name}
-          </Link>
+          </Button>
         ))}
-        <div className="flex justify-between w-full mt-5 text-center duration-100 rounded-sm dark:shadow-app-shadow shadow-app-shadow-light ">
+        <div className="flex justify-between w-full  text-center duration-100 rounded-sm dark:shadow-app-shadow shadow-app-shadow-light ">
           <Button
             variant="text"
             onClick={() => setTheme('system')}
-            className="flex items-center justify-center flex-1 btn"
+            className={`flex items-center justify-center flex-1 rounded-sm `}
           >
             {theme === 'system' ? <SystemOut /> : <SystemIcon />}
           </Button>
           <Button
             variant="text"
-            className="flex items-center justify-center flex-1 btn"
+            className="flex items-center justify-center flex-1  rounded-sm"
             onClick={() => setTheme('light')}
           >
             {theme === 'light' ? <SunIconOut /> : <SunIcon />}
           </Button>
           <Button
             variant="text"
-            className="flex items-center justify-center flex-1 btn"
+            className="flex items-center justify-center flex-1  rounded-sm"
             onClick={() => setTheme('dark')}
           >
             {theme === 'dark' ? <MoonIconOut /> : <MoonIcon />}
