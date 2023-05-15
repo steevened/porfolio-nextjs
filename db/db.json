@@ -2,7 +2,7 @@
   "res": {
     "works": [
       {
-        "id": 1,
+        "id": "para-cuando",
         "name": "Para Cuando",
         "title": "Vote for Your City's Next Big Event with Para Cuando",
         "technologies": "NextJS, TypeScript, Tailwindcss, SWR, Formik, Yup, Context API.",
@@ -35,7 +35,7 @@
         ]
       },
       {
-        "id": 2,
+        "id": "git-favorites",
         "name": "GitFavorites",
         "title": "GitFavorites: A Minimalistic App to Manage Your Favorite GitHub Profiles",
         "technologies": "NextJS, TypeScript, Tailwindcss, React Query, GitHub API.",
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "id": 3,
+        "id": "tech-commerce",
         "name": "TechCommerce",
         "title": "The Ultimate Destination for All Your Tech Needs",
         "technologies": "NextJS, TypeScript, Tailwindcss, React Query, Static Site Generation, Thrid Party API.",
