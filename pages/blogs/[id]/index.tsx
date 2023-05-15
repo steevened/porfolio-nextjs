@@ -7,11 +7,16 @@ import db from '../../../db/db.json';
 import { useEffect, useState } from 'react';
 import TailwinSkeleton from '@/components/blogs/skeleton/TailwinSkeleton';
 import { FreeDB } from '@/components/blogs/databases/FreeDB';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-const BlogPerNamePage: NextPageWithLayout = () => {
+interface Props {
+  id: string;
+}
+
+const BlogPerNamePage: NextPageWithLayout<Props> = ({ id }) => {
   const [blog, setBlog] = useState<any>();
   const router = useRouter();
-  const { id } = router.query;
+  // const { id } = router.query;
 
   useEffect(() => {
     const blogById = db.res.blogs.find((blog) => blog?.id === id);
@@ -48,6 +53,23 @@ const BlogPerNamePage: NextPageWithLayout = () => {
       <div className="">{Component()}</div>
     </div>
   );
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: db.res.blogs.map((blog) => ({
+      params: { id: blog.id },
+    })),
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = ({ params }) => {
+  const { id } = params as { id: string };
+
+  return {
+    props: { id },
+  };
 };
 
 BlogPerNamePage.getLayout = (page) => {
