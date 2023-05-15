@@ -65,7 +65,7 @@ const tools: Tool[] = [
   },
   {
     icon: <GitIcon />,
-    name: 'Git',
+    name: 'GIT',
   },
   {
     icon: <SequelizeLogo />,
