@@ -19,12 +19,12 @@ const BlogPerNamePage: NextPageWithLayout<Props> = ({ id }) => {
   // const { id } = router.query;
 
   useEffect(() => {
-    const blogById = db.res.blogs.find((blog) => blog?.id === id);
+    const blogById = db.res.blogs.find((blog) => blog.id === id);
     setBlog(blogById);
   }, [id]);
 
   function Component() {
-    switch (blog?.id) {
+    switch (id) {
       case 'animate-loading-skeleton-with-tailwind-css':
         return <TailwinSkeleton />;
       case 'free-database-for-developers':

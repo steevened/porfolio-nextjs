@@ -1,6 +1,5 @@
 import Layout from '@/components/layouts/Layout';
 import { NextPageWithLayout } from '@/pages/_app';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ReactElement, useEffect, useState } from 'react';
 import db from '../../../db/db.json';
@@ -8,19 +7,23 @@ import WorkSlider from '@/components/works/WorkSlider';
 import { Button } from '@material-tailwind/react';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@/components/svg/Svg';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-const ProjectPage: NextPageWithLayout = () => {
+interface Props {
+  id: string;
+}
+
+const ProjectPage: NextPageWithLayout<Props> = ({ id }) => {
   const [project, setProject] = useState<any>();
 
   const router = useRouter();
-  const { name } = router.query;
 
   useEffect(() => {
-    const projectByName = db.res.works.filter((work) => work.name === name);
-    setProject(projectByName[0]);
-  }, [name]);
+    const projectByID = db.res.works.filter((work) => work.id === id);
+    setProject(projectByID[0]);
+  }, [id]);
 
-  console.log(project?.links[0].url);
+  console.log(project);
 
   return (
     <>
@@ -37,7 +40,7 @@ const ProjectPage: NextPageWithLayout = () => {
           </Button>
         </div>
         <div className="text-center ">
-          <h1 className="mt-5 title-1 text-gradient">{name}</h1>
+          <h1 className="mt-5 title-1 text-gradient">{project?.name}</h1>
         </div>
 
         <div className="mt-6 ">
@@ -79,6 +82,25 @@ const ProjectPage: NextPageWithLayout = () => {
       </div>
     </>
   );
+};
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return {
+    paths: db.res.works.map((work) => ({
+      params: { id: work.id },
+    })),
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = ({ params }) => {
+  const { id } = params as { id: string };
+
+  return {
+    props: {
+      id,
+    },
+  };
 };
 
 ProjectPage.getLayout = (page: ReactElement) => {

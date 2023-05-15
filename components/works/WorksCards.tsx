@@ -9,7 +9,7 @@ const WorksCards = () => {
     <div className="grid gap-10 mt-10 md:grid-cols-2 place-items-center">
       {db.res.works.map((work) => (
         <Card
-          onClick={() => router.push(`/works/${work.name}`)}
+          onClick={() => router.push(`/works/${work.id}`)}
           key={work.title}
           role="button"
           className="flex flex-col items-center px-10 gap-y-5 max-w-[400px] h-[650px]"
