@@ -88,7 +88,7 @@ const NavbarLinks = () => {
     <>
       <ul className="relative items-center hidden overflow-hidden font-medium md:flex">
         <li
-          className={`absolute bg-sky-300/50 dark:bg-sky-700/50  h-full rounded-lg  duration-300 ease-out pointer-events-none w-1/4 ${
+          className={`absolute bg-sky-300/50 dark:bg-sky-700/50  h-full rounded-sm  duration-300 ease-out pointer-events-none w-1/4 ${
             hoverIndex === -1
               ? routeIndex === -1
                 ? 'hidden'
@@ -121,7 +121,7 @@ const NavbarLinks = () => {
           <Link href="/about">
             <Button
               variant="text"
-              className={` w-full text-center  hover:bg-transparent bg-transparent rounded-lg z-50 hover:text-sky-700/80 duration-200  dark:hover:text-sky-300/80 ${
+              className={` w-full text-center  hover:bg-transparent bg-transparent rounded-sm z-50 hover:text-sky-700/80 duration-200  dark:hover:text-sky-300/80 ${
                 isAbout && 'z-10 text-sky-700/80  dark:text-sky-300/80'
               }`}
             >
@@ -138,7 +138,7 @@ const NavbarLinks = () => {
           <Link href="/works">
             <Button
               variant="text"
-              className={` w-full text-center  hover:bg-transparent bg-transparent rounded-lg z-50 hover:text-sky-700/80 duration-200  dark:hover:text-sky-300/80 ${
+              className={` w-full text-center  hover:bg-transparent bg-transparent rounded-sm z-50 hover:text-sky-700/80 duration-200  dark:hover:text-sky-300/80 ${
                 isWorks && 'z-10 text-sky-700/80 dark:text-sky-300/80'
               }`}
             >
@@ -154,7 +154,7 @@ const NavbarLinks = () => {
           <Link href="/blogs" className="">
             <Button
               variant="text"
-              className={` w-full text-center  hover:bg-transparent bg-transparent rounded-lg z-50 hover:text-sky-700/80 duration-200  dark:hover:text-sky-300/80  ${
+              className={` w-full text-center  hover:bg-transparent bg-transparent rounded-sm z-50 hover:text-sky-700/80 duration-200  dark:hover:text-sky-300/80  ${
                 isBlogs && 'z-10 text-sky-700/80 dark:text-sky-300/80'
               }`}
             >
@@ -170,7 +170,7 @@ const NavbarLinks = () => {
           <Link href="/contact">
             <Button
               variant="text"
-              className={` w-full text-center  hover:bg-transparent bg-transparent rounded-lg z-50 hover:text-sky-700/80 duration-200  dark:hover:text-sky-300/80  ${
+              className={` w-full text-center  hover:bg-transparent bg-transparent rounded-sm z-50 hover:text-sky-700/80 duration-200  dark:hover:text-sky-300/80  ${
                 isContact && 'z-10 text-sky-700/80 dark:text-sky-300/80'
               }`}
             >
@@ -183,7 +183,7 @@ const NavbarLinks = () => {
         <div className="hidden md:block ">
           <Menu>
             <MenuHandler>
-              <Button variant="text" size="sm" className=" aspect-square p-2">
+              <Button variant="text" size="sm" className="p-2 aspect-square">
                 {currentTheme()}
               </Button>
             </MenuHandler>

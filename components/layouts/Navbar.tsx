@@ -35,13 +35,14 @@ const Navbar: FC = () => {
   return (
     <nav
       ref={navbarRef}
-      className={`fixed inset-x-0 z-30 flex items-center gap-5 p-5 bg-white/75 dark:bg-black/75 backdrop-blur-md dark:shadow-app-bottom shadow-app-bottom-light duration-500 `}
+      className={`fixed inset-x-0 z-30 flex items-center gap-5 px-5 py-2 bg-white/75 dark:bg-black/75 backdrop-blur-md dark:shadow-app-bottom shadow-md shadow-black/10 duration-500 `}
     >
       <div className="font-semibold grow">
         <Link href="/" className="">
           <Button
             variant="text"
-            className="text-sm md:text-lg whitespace-nowrap hover:bg-sky-300/50 hover:text-sky-700/80 dark:hover:bg-sky-700/50 dark:hover:text-sky-300/80"
+            size="sm"
+            className="text-sm rounded-sm md:text-lg whitespace-nowrap hover:bg-sky-300/50 hover:text-sky-700/80 dark:hover:bg-sky-700/50 dark:hover:text-sky-300/80"
           >
             STEVEN ELIAS
           </Button>
