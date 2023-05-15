@@ -33,7 +33,7 @@ const BlogPerNamePage: NextPageWithLayout<Props> = ({ id }) => {
   }
 
   return (
-    <div className="relative py-5 md:my-10 ">
+    <div className="relative py-5 ">
       <div className="absolute">
         <Button
           onClick={() => router.back()}
