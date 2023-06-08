@@ -69,8 +69,8 @@ module.exports = withMT({
       },
 
       backgroundImage: {
-        light: 'url("../public/dots-pattern.svg")',
-        dark: 'url("../public/bg.svg")',
+        light: 'url("/dots-pattern.svg")',
+        dark: 'url("/bg.svg")',
       },
       keyframes: {
         'gradient-x': {
