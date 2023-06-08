@@ -69,17 +69,24 @@ const Home = () => {
             </Link>
 
             <div className="flex justify-center gap-5 md:justify-start">
-              <Button color="purple" size="lg">
-                Visit Linkedin
-              </Button>
-              <Button
-                color="purple"
-                size="lg"
-                variant="outlined"
-                className="focus:ring-0"
+              <Link
+                href="https://www.linkedin.com/in/steevened/"
+                target="_blank"
               >
-                Visit GitHub
-              </Button>
+                <Button color="purple" size="lg">
+                  Visit Linkedin
+                </Button>
+              </Link>
+              <Link href="https://github.com/steevened" target="_blank">
+                <Button
+                  color="purple"
+                  size="lg"
+                  variant="outlined"
+                  className="focus:ring-0"
+                >
+                  Visit GitHub
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
