@@ -88,7 +88,7 @@ const NavbarLinks = () => {
     <>
       <ul className="relative items-center hidden font-medium md:flex ">
         <li
-          className={`absolute bg-gray-200 dark:bg-sky-700/50  h-full rounded-md    duration-200 ease-in-out z-0 pointer-events-none w-1/4 ${
+          className={`absolute bg-purple-100 dark:bg-purple-500/40  h-full rounded-md    duration-200 ease-in-out z-0 pointer-events-none w-1/4 ${
             hoverIndex === -1
               ? routeIndex === -1
                 ? 'hidden'
@@ -121,9 +121,8 @@ const NavbarLinks = () => {
           <Link href="/about">
             <Button
               variant="text"
-              className={`w-full text-center hover:bg-transparent bg-transparent rounded-md  sticky z-50 text-gray-900 hover:text-purple-700 duration-200  dark:hover:text-sky-300/80 ${
-                isAbout &&
-                'text-purple-500 hover:text-purple-700  dark:text-sky-300/80'
+              className={`w-full text-center hover:bg-transparent bg-transparent rounded-md  sticky z-50 text-gray-900 dark:text-gray-400 hover:text-purple-700 duration-200 ${
+                isAbout && 'text-purple-500 hover:text-purple-700'
               }`}
             >
               About
@@ -139,9 +138,8 @@ const NavbarLinks = () => {
           <Link href="/works">
             <Button
               variant="text"
-              className={`w-full text-center hover:bg-transparent bg-transparent rounded-md  sticky z-50 text-gray-900 hover:text-purple-700 duration-200  dark:hover:text-sky-300/80 ${
-                isWorks &&
-                'text-purple-500 hover:text-purple-700  dark:text-sky-300/80'
+              className={`w-full text-center hover:bg-transparent bg-transparent rounded-md  sticky z-50 text-gray-900 dark:text-gray-400 hover:text-purple-700 duration-200 ${
+                isWorks && 'text-purple-500 hover:text-purple-700  '
               }`}
             >
               Works
@@ -156,9 +154,8 @@ const NavbarLinks = () => {
           <Link href="/blogs" className="">
             <Button
               variant="text"
-              className={`w-full text-center hover:bg-transparent bg-transparent rounded-md  sticky z-50 text-gray-900 hover:text-purple-700 duration-200  dark:hover:text-sky-300/80  ${
-                isBlogs &&
-                'text-purple-500 hover:text-purple-700  dark:text-sky-300/80'
+              className={`w-full text-center hover:bg-transparent bg-transparent rounded-md  sticky z-50 text-gray-900 dark:text-gray-400 hover:text-purple-700 duration-200  ${
+                isBlogs && 'text-purple-500 hover:text-purple-700  '
               }`}
             >
               Blog
@@ -173,9 +170,8 @@ const NavbarLinks = () => {
           <Link href="/contact">
             <Button
               variant="text"
-              className={`w-full text-center hover:bg-transparent bg-transparent rounded-md  sticky z-50 text-gray-900 hover:text-purple-700 duration-200  dark:hover:text-sky-300/80 ${
-                isContact &&
-                'text-purple-500 hover:text-purple-700  dark:text-sky-300/80'
+              className={`w-full text-center hover:bg-transparent bg-transparent rounded-md  sticky z-50 text-gray-900 dark:text-gray-400 hover:text-purple-700 duration-200 ${
+                isContact && 'text-purple-500 hover:text-purple-700  '
               }`}
             >
               Contact

@@ -41,7 +41,7 @@ const Navbar: FC = () => {
         <div className="font-semibold grow">
           <Link
             href="/"
-            className="duration-100 md:text-lg whitespace-nowrap hover:text-purple-500 dark:hover:text-sky-300/80"
+            className="duration-100 md:text-lg whitespace-nowrap hover:text-purple-500 dark:hover:text-purple-300"
           >
             STEVEN ELIAS
           </Link>

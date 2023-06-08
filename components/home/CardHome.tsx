@@ -1,6 +1,5 @@
-import { AcademloIcon, GithubLogo, LinkedinLogo } from '../svg/Svg';
-import me from '@/public/me.png';
-import Image from 'next/image';
+import { AcademloIcon } from '../svg/Svg';
+
 import Avatar from '../atoms/Avatar';
 import { Brand } from '../atoms/Brand';
 
