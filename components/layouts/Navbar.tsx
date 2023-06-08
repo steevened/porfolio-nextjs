@@ -33,20 +33,22 @@ const Navbar: FC = () => {
   }, [isNavbarSticky]);
 
   return (
-    <nav
+    <header
       ref={navbarRef}
-      className={`fixed inset-x-0 z-30 flex items-center gap-5 px-5 py-2 bg-white/75 dark:bg-black/75 backdrop-blur-md dark:shadow-app-bottom shadow-md shadow-black/10 duration-500 `}
+      className={`fixed inset-x-0  z-30  px-5 py-4 bg-white/75 dark:bg-black/75 backdrop-blur-md dark:shadow-app-bottom shadow-app-bottom-light shadow-black/10 duration-500 md:px-10 lg:px-20`}
     >
-      <div className="font-semibold grow">
-        <Link
-          href="/"
-          className="rounded-sm md:text-lg whitespace-nowrap hover:text-sky-700/80 dark:hover:bg-sky-700/50 dark:hover:text-sky-300/80"
-        >
-          STEVEN ELIAS
-        </Link>
-      </div>
-      <NavbarLinks />
-    </nav>
+      <nav className="flex items-center max-w-4xl gap-5 mx-auto ">
+        <div className="font-semibold grow">
+          <Link
+            href="/"
+            className="duration-100 md:text-lg whitespace-nowrap hover:text-purple-500 dark:hover:text-sky-300/80"
+          >
+            STEVEN ELIAS
+          </Link>
+        </div>
+        <NavbarLinks />
+      </nav>
+    </header>
   );
 };
 
