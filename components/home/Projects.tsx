@@ -95,6 +95,20 @@ const Projects: FC<ProjectsProps> = ({}) => {
             </li>
           ))}
         </ul>
+        <div className="flex justify-start mt-10">
+          <Link href="/works">
+            <Button
+              className="flex items-center gap-2 mx-auto group"
+              color="purple"
+              size="lg"
+            >
+              <p>View All</p>
+              <span className="duration-100 group-hover:translate-x-1">
+                <ArrowLeftIcon />
+              </span>
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
