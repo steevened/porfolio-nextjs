@@ -36,22 +36,19 @@ const Home = () => {
 
         <Projects />
 
-        <div className="w-screen  left-[calc(-50vw_+_50%)] relative">
-          <TechSlider />
-        </div>
+        <TechSlider />
 
         <div className="space-y-32">
-          <Tools />
-          <Services />
-          <Experience />
-          <Education />
-          <div>
+          {/* <Services /> */}
+          {/* <Experience /> */}
+          {/* <Education /> */}
+          {/* <div>
             <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
               Selected Works
             </h2>
             <WorksCards />
-          </div>
-          <div>
+          </div> */}
+          <div className="pt-10">
             <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
               Latest Posts
             </h2>

@@ -3,19 +3,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-  ChatgptIcon,
-  FigmaIcon,
-  GitIcon,
-  MongoIcon,
-  NextIcon,
-  NodeIcon,
-  PostgreIcon,
-  ReactIcon,
-  ReduxIcon,
-  SequelizeLogo,
-  TailwindIcon,
-} from '../svg/Svg';
+
 import { Autoplay } from 'swiper';
 import {
   GtIcon,
@@ -26,7 +14,13 @@ import {
   RjsIcon,
   TsLogo,
   TwLogo,
+  ReduxIcon,
+  FigmaIcon,
+  GptIcon,
+  SequelIcon,
+  NestIcon,
 } from '../svg/skills/skillsSvgs';
+import Image from 'next/image';
 
 interface Skill {
   icon: ReactNode;
@@ -47,7 +41,7 @@ const skills: Skill[] = [
     name: 'TailwindCSS',
   },
   {
-    icon: <TsLogo />,
+    icon: <GptIcon />,
     name: 'ChatGPT',
   },
 
@@ -68,11 +62,11 @@ const skills: Skill[] = [
     name: 'PostgreSQL',
   },
   {
-    icon: <TsLogo />,
+    icon: <ReduxIcon />,
     name: 'Redux',
   },
   {
-    icon: <TsLogo />,
+    icon: <FigmaIcon />,
     name: 'Figma',
   },
   {
@@ -80,8 +74,12 @@ const skills: Skill[] = [
     name: 'GIT',
   },
   {
-    icon: <TsLogo />,
+    icon: <SequelIcon />,
     name: 'Sequelize',
+  },
+  {
+    icon: <NestIcon />,
+    name: 'NestJS',
   },
 ];
 
@@ -89,56 +87,75 @@ interface TechSliderProps {}
 
 const TechSlider: FC<TechSliderProps> = ({}) => {
   return (
-    <Swiper
-      className="brandSlider bg-white shadow-2xl shadow-black/10 dark:bg-black dark:shadow-app-shadow"
-      slidesPerView={'auto'}
-      loop={true}
-      modules={[Autoplay]}
-      speed={5000}
-      autoplay={{
-        delay: 0,
-        disableOnInteraction: true,
-        stopOnLastSlide: false,
-        reverseDirection: false,
-        pauseOnMouseEnter: true,
-      }}
-      allowTouchMove={false}
-      breakpoints={{
-        300: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-        600: {
-          slidesPerView: 3.3,
-          spaceBetween: 30,
-        },
-        800: {
-          slidesPerView: 3.5,
-          spaceBetween: 50,
-        },
-        1000: {
-          slidesPerView: 5,
-          spaceBetween: 50,
-        },
-        1300: {
-          slidesPerView: 7,
-          spaceBetween: 50,
-        },
-        1400: {
-          slidesPerView: 9,
-          spaceBetween: 50,
-        },
-      }}
-    >
-      {skills.map((skill) => (
-        <SwiperSlide
-          key={skill.name}
-          className=" aspect-square flex items-center justify-center p-5"
+    <div className="pt-20">
+      <div className="w-screen  left-[calc(-50vw_+_50%)] relative ">
+        <Swiper
+          className="brandSlider bg-white shadow-2xl shadow-black/10 dark:bg-black dark:shadow-app-shadow border-y border-gray-700/20 dark:border-none"
+          slidesPerView={'auto'}
+          loop={true}
+          modules={[Autoplay]}
+          speed={3000}
+          autoplay={{
+            delay: 0,
+            reverseDirection: true,
+          }}
+          allowTouchMove={false}
+          breakpoints={{
+            300: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            600: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+
+            900: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+            1300: {
+              slidesPerView: 6,
+              spaceBetween: 60,
+            },
+            // 1400: {
+            //   slidesPerView: 9,
+            //   spaceBetween: 50,
+            // },
+          }}
         >
-          {skill.icon}
-        </SwiperSlide>
-      ))}
-    </Swiper>
+          <>
+            {skills.map((skill) => (
+              <SwiperSlide
+                key={skill.name}
+                id={skill.name}
+                className=" w-full aspect-square flex items-center justify-center p-5"
+              >
+                {skill.icon}
+                <span className="text-center mt-3 font-semibold text-gray-700 dark:text-gray-500 text-xs sm:text-lg  md:text-2xl w-full block ">
+                  {skill.name}
+                </span>
+              </SwiperSlide>
+            ))}
+          </>
+          <SwiperSlide
+            id={'linux'}
+            className=" aspect-square flex items-center justify-center p-5"
+          >
+            <Image
+              src={'/skills/linux.png'}
+              width={5000}
+              height={5000}
+              className="w-full h-full object-contain"
+              alt="linux logo"
+            />
+            <span className="text-center mt-3 font-semibold text-gray-700 text-xs md:text-2xl sm:text-lg w-full block dark:text-gray-500">
+              Linux
+            </span>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </div>
   );
 };
 
