@@ -9,9 +9,9 @@ interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
   return (
-    <div className="flex flex-col items-center md:justify-between md:flex-row-reverse  gap-y-5 h-[calc(100vh-100px)]">
+    <div className="flex flex-col items-center md:justify-between md:flex-row-reverse  gap-y-5 h-[calc(100vh-100px)] ">
       <div className="p-2">
-        <Avatar className="w-48 md:w-60" />
+        <Avatar className="w-48 md:w-60 lg:w-72" />
       </div>
       <div className="space-y-5 text-center md:text-left">
         <h2 className="text-4xl font-bold md:text-6xl text-gradient drop-shadow-sm">
