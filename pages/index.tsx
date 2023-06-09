@@ -16,6 +16,7 @@ import Link from 'next/link';
 import Hero from '@/components/home/Hero';
 import Image from 'next/image';
 import Projects from '@/components/home/Projects';
+import TechSlider from '@/components/sliders/TechSlider';
 
 const Home = () => {
   return (
@@ -29,11 +30,15 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="relative mb-5 md:mb-10 ">
+      <section className="relative mb-5 md:mb-10 space-y-10">
         {/* <CardHome /> */}
         <Hero />
 
         <Projects />
+
+        <div className="w-screen  left-[calc(-50vw_+_50%)] relative">
+          <TechSlider />
+        </div>
 
         <div className="space-y-32">
           <Tools />
