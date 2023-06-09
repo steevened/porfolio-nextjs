@@ -13,8 +13,8 @@ const Hero: FC<HeroProps> = ({}) => {
       <div className="p-2">
         <Avatar className="w-48 md:w-60" />
       </div>
-      <div className="space-y-5">
-        <h2 className="text-4xl font-bold text-center md:text-left md:text-6xl text-gradient drop-shadow-sm">
+      <div className="space-y-5 text-center md:text-left">
+        <h2 className="text-4xl font-bold md:text-6xl text-gradient drop-shadow-sm">
           {"Hi, I'm Steven Alvarado"}
         </h2>
         <RoughNotationGroup show={true}>
@@ -36,10 +36,10 @@ const Hero: FC<HeroProps> = ({}) => {
 
         <Link
           href="/about"
-          className="flex items-center gap-2 px-2 py-3 duration-100 -translate-x-2 rounded-md w-min group hover:bg-purple-50 dark:hover:bg-purple-900/10 hover:text-purple-500 hover:shadow-sm"
+          className="flex items-center gap-2 px-2 py-3 mx-auto duration-100 translate-x-0 rounded-md md:ml-0 md:-translate-x-2 w-min group hover:bg-purple-50 dark:hover:bg-purple-900/10 hover:text-purple-500 hover:shadow-sm"
           role="button"
         >
-          <p className="text-xl font-medium whitespace-nowrap ">
+          <p className="text-xl font-medium whitespace-nowrap">
             Want to know me more?
           </p>
           <span className="duration-100 -translate-x-1 group-hover:translate-x-0">

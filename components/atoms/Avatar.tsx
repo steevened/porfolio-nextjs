@@ -10,7 +10,7 @@ const Avatar: FC<Props> = ({ className }) => {
   const { isNavbarSticky } = useContext(UIContext);
   return (
     <div
-      className={`relative flex  overflow-hidden rounded-full hover:scale-110 duration-200 aspect-square shadow-app-shadow-xl dark:shadow-app-shadow-dark-xl ${
+      className={`relative flex  overflow-hidden rounded-full hover:scale-110 duration-200 aspect-square shadow-2xl shadow-purple-500/20 hover:shadow-purple-500/40 ${
         !className
           ? isNavbarSticky
             ? 'w-16 h-16'
