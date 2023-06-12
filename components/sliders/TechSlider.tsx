@@ -22,7 +22,7 @@ import {
 } from '../svg/skills/skillsSvgs';
 import Image from 'next/image';
 
-interface Skill {
+export interface Skill {
   icon: ReactNode;
   name: string;
 }
@@ -90,7 +90,7 @@ const TechSlider: FC<TechSliderProps> = ({}) => {
     <div className="pt-20">
       <div className="w-screen  left-[calc(-50vw_+_50%)] relative ">
         <Swiper
-          className="brandSlider bg-white shadow-2xl shadow-black/10 dark:bg-black dark:shadow-app-shadow border-y border-gray-700/20 dark:border-none"
+          className="bg-white shadow-2xl brandSlider shadow-black/10 dark:bg-black dark:shadow-app-shadow border-y border-gray-700/20 dark:border-none"
           slidesPerView={'auto'}
           loop={true}
           modules={[Autoplay]}
@@ -129,10 +129,10 @@ const TechSlider: FC<TechSliderProps> = ({}) => {
               <SwiperSlide
                 key={skill.name}
                 id={skill.name}
-                className=" w-full aspect-square flex items-center justify-center p-5"
+                className="flex items-center justify-center w-full p-5  aspect-square"
               >
                 {skill.icon}
-                <span className="text-center mt-3 font-semibold text-gray-700 dark:text-gray-500 text-xs sm:text-lg  md:text-2xl w-full block ">
+                <span className="block w-full mt-3 text-xs font-semibold text-center text-gray-700 dark:text-gray-500 sm:text-lg md:text-2xl ">
                   {skill.name}
                 </span>
               </SwiperSlide>
@@ -140,16 +140,16 @@ const TechSlider: FC<TechSliderProps> = ({}) => {
           </>
           <SwiperSlide
             id={'linux'}
-            className=" aspect-square flex items-center justify-center p-5"
+            className="flex items-center justify-center p-5  aspect-square"
           >
             <Image
               src={'/skills/linux.png'}
               width={5000}
               height={5000}
-              className="w-full h-full object-contain"
+              className="object-contain w-full h-full"
               alt="linux logo"
             />
-            <span className="text-center mt-3 font-semibold text-gray-700 text-xs md:text-2xl sm:text-lg w-full block dark:text-gray-500">
+            <span className="block w-full mt-3 text-xs font-semibold text-center text-gray-700 md:text-2xl sm:text-lg dark:text-gray-500">
               Linux
             </span>
           </SwiperSlide>
