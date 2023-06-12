@@ -1,20 +1,11 @@
 import Layout from '@/components/layouts/Layout';
 import Head from 'next/head';
 import { ReactElement } from 'react';
-import { CardHome, Services } from '@/components/home';
-import Tools from '@/components/home/Tools';
-import Experience from '@/components/about/Experience';
-import Education from '@/components/about/Education';
-import WorksCards from '@/components/works/WorksCards';
+
 import { BlogsList } from '@/components/blogs/BlogsList';
 import { ContactCard } from '@/components/molecules/ContactCard';
-import Avatar from '@/components/atoms/Avatar';
-import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
-import { Button } from '@material-tailwind/react';
-import { ArrowLeftIcon } from '@/components/svg/Svg';
-import Link from 'next/link';
+
 import Hero from '@/components/home/Hero';
-import Image from 'next/image';
 import Projects from '@/components/home/Projects';
 import TechSlider from '@/components/sliders/TechSlider';
 
@@ -30,7 +21,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="relative mb-5 md:mb-10 space-y-10">
+      <section className="relative mb-5 space-y-10 md:mb-10">
         {/* <CardHome /> */}
         <Hero />
 
