@@ -60,9 +60,18 @@ export const projects: Project[] = [
     slug: 'para-cuando',
     title: 'Para Cuándo',
     description:
-      'Vote for you next event in Queretaro with "Para Cuándo" official app.',
+      'Vote for you next event in Queretaro with "Para Cuándo" official website.',
     demo: 'https://steevened.github.io/para-cuando/',
     repo: 'https://github.com/steevened/para-cuando',
+    images: [
+      '/projects/paracuando/pc.png',
+      '/projects/paracuando/pc2.png',
+      '/projects/paracuando/pc3.png',
+      '/projects/paracuando/pc4.png',
+      '/projects/paracuando/pc5.png',
+      '/projects/paracuando/pc6.png',
+      '/projects/paracuando/pc7.png',
+    ],
     stack: [
       {
         name: 'TypeScript',
@@ -115,6 +124,28 @@ export const projects: Project[] = [
     description: 'All the tech you need in one place.',
     demo: 'https://techcommerceapp.netlify.app/',
     repo: 'https://github.com/steevened/techcommerce',
+    images: [
+      '/projects/tc/tc.png',
+      '/projects/tc/tc2.png',
+      '/projects/tc/tc3.png',
+      '/projects/tc/tc4.png',
+      '/projects/tc/tc5.png',
+      '/projects/tc/tc6.png',
+    ],
+    stack: [
+      {
+        name: 'TypeScript',
+        icon: <TsLogo />,
+      },
+      {
+        icon: <NxIcon />,
+        name: 'Next.js',
+      },
+      {
+        name: 'Tailwind css',
+        icon: <TwLogo />,
+      },
+    ],
   },
   {
     imageUrl: '/projects/git.png',
@@ -122,6 +153,28 @@ export const projects: Project[] = [
     title: 'Git Favorites',
     description: 'Manage your favorite Github profiles.',
     demo: 'https://gitfinderx.netlify.app/',
+    repo: 'https://github.com/steevened/git-finder',
+    images: [
+      '/projects/gf/gf.png',
+      '/projects/gf/gf2.png',
+      '/projects/gf/gf3.png',
+      '/projects/gf/gf4.png',
+      '/projects/gf/gf5.png',
+    ],
+    stack: [
+      {
+        name: 'TypeScript',
+        icon: <TsLogo />,
+      },
+      {
+        icon: <NxIcon />,
+        name: 'Next.js',
+      },
+      {
+        name: 'Tailwind css',
+        icon: <TwLogo />,
+      },
+    ],
   },
   {
     imageUrl: '/projects/poke.png',
@@ -130,5 +183,19 @@ export const projects: Project[] = [
     description: 'Search and save your favorite pokemons.',
     demo: 'https://steevened.github.io/poke/',
     repo: 'https://github.com/steevened/poke',
+    stack: [
+      {
+        name: 'TypeScript',
+        icon: <TsLogo />,
+      },
+      {
+        icon: <NxIcon />,
+        name: 'Next.js',
+      },
+      {
+        name: 'Tailwind css',
+        icon: <TwLogo />,
+      },
+    ],
   },
 ];

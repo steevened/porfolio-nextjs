@@ -12,7 +12,7 @@ const Projects: FC<ProjectsProps> = ({}) => {
   return (
     <div className="flex items-center min-h-screen ">
       <div>
-        <h3 className="text-4xl font-bold">Projects</h3>
+        <h3 className="text-4xl font-bold text-gradient">Projects</h3>
         <h4 className="mt-2 font-medium text-gray-700 dark:text-gray-500 ">
           {'Some of my latest projects and contributions'}
         </h4>

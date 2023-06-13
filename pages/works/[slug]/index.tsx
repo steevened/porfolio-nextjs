@@ -1,6 +1,6 @@
 import Layout from '@/components/layouts/Layout';
 import Card from '@/components/molecules/Card';
-import { BuildingIcon, LockIcon } from '@/components/svg/Svg';
+import { ArrowLeftIcon, BuildingIcon, LockIcon } from '@/components/svg/Svg';
 import { Project, projects } from '@/db/projects';
 import { NextPageWithLayout } from '@/pages/_app';
 import { Button, Carousel } from '@material-tailwind/react';
@@ -24,7 +24,17 @@ const ProjectPage: NextPageWithLayout<ProjectProps> = ({ slug }) => {
   }, [slug]);
 
   return (
-    <div className="min-h-[calc(100vh-175px)] mb-10 ">
+    <div className="min-h-[calc(100vh-175px)] mb-10 relative">
+      <div className="absolute">
+        <Button
+          size="sm"
+          color="purple"
+          variant="text"
+          onClick={() => router.back()}
+        >
+          <ArrowLeftIcon rotate />
+        </Button>
+      </div>
       <div className="text-center ">
         <h1 className="py-2 title-1 text-gradient">{project?.title}</h1>
       </div>
@@ -71,9 +81,10 @@ const ProjectPage: NextPageWithLayout<ProjectProps> = ({ slug }) => {
 
             {project?.private ? (
               <Button
-                color="purple"
+                color="blue"
                 disabled
                 variant="outlined"
+                size="sm"
                 className="flex items-center gap-2"
               >
                 <LockIcon />
@@ -81,7 +92,7 @@ const ProjectPage: NextPageWithLayout<ProjectProps> = ({ slug }) => {
               </Button>
             ) : (
               <Link href={project?.repo || ''} target="_blank">
-                <Button color="purple" variant="outlined">
+                <Button color="blue" variant="outlined">
                   Visit Repo
                 </Button>
               </Link>

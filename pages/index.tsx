@@ -40,7 +40,7 @@ const Home = () => {
             <WorksCards />
           </div> */}
           <div className="pt-10">
-            <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
+            <h2 className="mb-8 font-semibold md:text-4xl text-gradient ">
               Latest Posts
             </h2>
             <BlogsList />
