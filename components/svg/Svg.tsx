@@ -139,12 +139,12 @@ export function ContactIconOut() {
   );
 }
 
-export function ArrowLeftIcon({ rotate = false }) {
+export function ArrowLeftIcon({ rotate = false, strokeWidth = 2 }) {
   return (
     <svg
       fill="none"
       stroke="currentColor"
-      strokeWidth={2}
+      strokeWidth={!strokeWidth ? 2 : strokeWidth}
       className={`w-5 h-5 ${rotate && 'rotate-180'}`}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -975,6 +975,46 @@ export function FreeCodeCampLogo() {
         d="M27.5477 0.756757C28.0617 1.21922 28.5328 1.93393 28.5328 2.64865C28.5328 3.86787 27.0765 5.50751 24.378 8.1982C13.1558 18.8348 7.50185 31.8258 7.54469 47.5496C7.58752 64.8709 13.5413 78.8288 25.1062 89.6336C27.5048 91.7357 28.5328 93.4174 28.5328 94.8468C28.5328 95.5616 28.0188 96.3183 27.5477 96.991C27.0765 97.4955 26.0913 98 25.3632 98C22.6647 98 18.9382 94.8889 14.0553 88.8348C4.54633 77.3994 0.263039 64.7868 0.00604105 47.5496C-0.208124 30.3123 5.2745 18.6246 16.0684 6.55856C19.9234 2.27027 23.1787 0 25.3632 0C26.0913 0 26.8195 0.252252 27.5477 0.756757Z"
         fill="currentColor"
       />
+    </svg>
+  );
+}
+
+export function LockIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-6 h-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+      />
+    </svg>
+  );
+}
+
+export function BuildingIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3l2 3l2 15h-8l2 -15z"></path>
+      <path d="M8 9l8 0"></path>
+      <path d="M3 11l2 -2l-2 -2"></path>
+      <path d="M21 11l-2 -2l2 -2"></path>
     </svg>
   );
 }
