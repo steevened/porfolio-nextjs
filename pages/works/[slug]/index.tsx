@@ -3,7 +3,7 @@ import Card from '@/components/molecules/Card';
 import { ArrowLeftIcon, BuildingIcon, LockIcon } from '@/components/svg/Svg';
 import { Project, projects } from '@/db/projects';
 import { NextPageWithLayout } from '@/pages/_app';
-import { Button, Carousel } from '@material-tailwind/react';
+import { Button, Carousel, IconButton } from '@material-tailwind/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -40,7 +40,33 @@ const ProjectPage: NextPageWithLayout<ProjectProps> = ({ slug }) => {
       </div>
 
       <div className="h-full mt-5 shadow-xl shadow-black/20 dark:shadow-app-shadow-dark-xl ">
-        <Carousel className="rounded-xl" loop={true} autoplay={true}>
+        <Carousel
+          className="rounded-xl"
+          loop={true}
+          autoplay={true}
+          prevArrow={({ handlePrev }) => (
+            <IconButton
+              variant="text"
+              color="gray"
+              size="lg"
+              onClick={handlePrev}
+              className="!absolute top-2/4 -translate-y-2/4 left-4"
+            >
+              <ArrowLeftIcon strokeWidth={3} rotate />
+            </IconButton>
+          )}
+          nextArrow={({ handleNext }) => (
+            <IconButton
+              variant="text"
+              color="gray"
+              size="lg"
+              onClick={handleNext}
+              className="!absolute top-2/4 -translate-y-2/4 !right-4"
+            >
+              <ArrowLeftIcon strokeWidth={3} />
+            </IconButton>
+          )}
+        >
           {project?.images?.map((image, index) => (
             <Image
               src={image}

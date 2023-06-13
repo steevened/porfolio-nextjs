@@ -183,6 +183,15 @@ export const projects: Project[] = [
     description: 'Search and save your favorite pokemons.',
     demo: 'https://steevened.github.io/poke/',
     repo: 'https://github.com/steevened/poke',
+    images: [
+      '/projects/poke.png',
+      '/projects/pk/pk1.png',
+      '/projects/pk/pk2.png',
+      '/projects/pk/pk6.png',
+      '/projects/pk/pk3.png',
+      '/projects/pk/pk4.png',
+      '/projects/pk/pk5.png',
+    ],
     stack: [
       {
         name: 'TypeScript',
