@@ -94,6 +94,18 @@ export const projects: Project[] = [
     description: 'Feel the power of AI in your Instagram clone app.',
     building: true,
     repo: 'https://github.com/steevened/sociai',
+    images: [
+      '/projects/aigram.png',
+      '/projects/sai/sai.png',
+      '/projects/sai/sai2.png',
+      '/projects/sai/sai3.png',
+      '/projects/sai/sai4.png',
+      '/projects/sai/sai5.png',
+      '/projects/sai/sai6.png',
+      '/projects/sai/sai7.png',
+      '/projects/sai/sai8.png',
+      '/projects/sai/sai9.png',
+    ],
     stack: [
       {
         name: 'TypeScript',
