@@ -3,10 +3,6 @@ const Description = () => {
     <article className="mt-2 text-sm md:text-base">
       <p>
         <span className="block my-2">
-          As a passionate front-end developer, I create amazing websites and web
-          apps to make the internet a better place.
-        </span>
-        <span className="block my-2">
           I am 22 years old and ever since I was a kid, I&apos;ve been
           fascinated by computers and how they work. I used to spend hours
           tinkering with hardware and software, trying to understand how

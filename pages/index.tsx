@@ -11,49 +11,38 @@ import TechSlider from '@/components/sliders/TechSlider';
 
 const Home = () => {
   return (
-    <>
-      <Head>
-        <title>Steven Elias - Personal site</title>
-        <meta
-          name="description"
-          content="Personal site of Steven Elias - steevened"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <section className="relative mb-5 space-y-10 md:mb-10">
+      {/* <CardHome /> */}
+      <Hero />
 
-      <section className="relative mb-5 space-y-10 md:mb-10">
-        {/* <CardHome /> */}
-        <Hero />
+      <Projects />
 
-        <Projects />
+      <TechSlider />
 
-        <TechSlider />
-
-        <div className="space-y-32">
-          {/* <Services /> */}
-          {/* <Experience /> */}
-          {/* <Education /> */}
-          {/* <div>
+      <div className="space-y-32">
+        {/* <Services /> */}
+        {/* <Experience /> */}
+        {/* <Education /> */}
+        {/* <div>
             <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
               Selected Works
             </h2>
             <WorksCards />
           </div> */}
-          <div className="pt-10">
-            <h2 className="mb-8 font-semibold md:text-4xl text-gradient ">
-              Latest Posts
-            </h2>
-            <BlogsList />
-          </div>
-          <div className="text-center">
-            <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
-              Contact Me
-            </h2>
-            <ContactCard />
-          </div>
+        <div className="pt-10">
+          <h2 className="mb-8 font-semibold md:text-4xl text-gradient ">
+            Latest Posts
+          </h2>
+          <BlogsList />
         </div>
-      </section>
-    </>
+        <div className="text-center">
+          <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
+            Contact Me
+          </h2>
+          <ContactCard />
+        </div>
+      </div>
+    </section>
   );
 };
 
