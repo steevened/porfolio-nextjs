@@ -8,6 +8,8 @@ import { ContactCard } from '@/components/molecules/ContactCard';
 import Hero from '@/components/home/Hero';
 import Projects from '@/components/home/Projects';
 import TechSlider from '@/components/sliders/TechSlider';
+import Experience from '@/components/about/Experience';
+import Education from '@/components/about/Education';
 
 const Home = () => {
   return (
@@ -18,27 +20,16 @@ const Home = () => {
       <Projects />
 
       <TechSlider />
+      <Experience />
+      <Education />
 
       <div className="space-y-32">
-        {/* <Services /> */}
-        {/* <Experience /> */}
-        {/* <Education /> */}
-        {/* <div>
-            <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
-              Selected Works
-            </h2>
-            <WorksCards />
-          </div> */}
         <div className="pt-10">
-          <h2 className="mb-8 font-semibold md:text-4xl text-gradient ">
-            Latest Posts
-          </h2>
+          <h2 className="text-4xl font-bold text-gradient">Latest Posts</h2>
           <BlogsList />
         </div>
         <div className="text-center">
-          <h2 className="mb-8 text-3xl font-semibold md:text-4xl">
-            Contact Me
-          </h2>
+          <h2 className="mb-8 text-4xl font-bold text-gradient">Contact Me</h2>
           <ContactCard />
         </div>
       </div>
