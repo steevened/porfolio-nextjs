@@ -62,7 +62,7 @@ module.exports = withMT({
         'app-right': 'inset -1px 0 0 rgba(255, 255, 255, 0.1)',
         'app-image': '0 0 0 1px rgba(255, 255, 255, 0.1)',
         'app-shadow-xl': '0 10px 60px 0 rgba(100, 100, 100, 0.5)',
-        'app-shadow-dark-xl': '0 10px 60px 0 rgba(255, 255, 255, 0.1)',
+        'app-shadow-dark-xl': '0 10px 70px 0 rgba(80, 80, 80, 0.1)',
       },
       animation: {
         'spin-slow': 'spin 5s linear infinite',
