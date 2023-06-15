@@ -44,7 +44,7 @@ const educations: Education[] = [
 const Education = () => {
   return (
     <div>
-      <h3 className="mb-8 text-3xl font-semibold md:text-4xl">My Education</h3>
+      <h3 className="mb-8 text-4xl font-bold text-gradient">My Education</h3>
 
       <div className="space-y-10 ">
         {educations.map((education) => (

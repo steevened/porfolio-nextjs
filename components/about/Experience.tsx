@@ -47,7 +47,7 @@ const experiences: Experience[] = [
 const Experience = () => {
   return (
     <div>
-      <h3 className="mb-8 text-3xl font-semibold md:text-4xl">My Experience</h3>
+      <h3 className="my-10 text-4xl font-bold text-gradient">My Experience</h3>
 
       <div className="space-y-10 ">
         {experiences.map((experience) => (
