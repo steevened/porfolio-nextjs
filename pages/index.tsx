@@ -25,7 +25,7 @@ const Home = () => {
 
       <div className="space-y-32">
         <div className="pt-10">
-          <h2 className="text-4xl font-bold text-gradient">Latest Posts</h2>
+          <h2 className="text-4xl font-bold text-gradient">Latest Blogs</h2>
           <BlogsList />
         </div>
         <div className="text-center">

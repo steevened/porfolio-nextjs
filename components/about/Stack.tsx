@@ -76,7 +76,7 @@ const tools: Tool[] = [
 const Stack = () => {
   return (
     <div>
-      <h3 className="mb-8 text-3xl font-semibold md:text-4xl">
+      <h3 className="mb-10 text-4xl font-bold text-gradient">
         My Tools and Technologies
       </h3>
       <ToolsContainer>
