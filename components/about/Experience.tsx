@@ -76,7 +76,7 @@ const experiences: Experience[] = [
     company: 'Freelance',
     technologies:
       'TypeScript, JavaScript, ReactJS, NextJS, SWR, Redux, MongoDB, ExpressJS, NodeJS, React Query, Material UI, PostgreSQL, Sequelize, Tailwind css, Vercel.',
-    duration: 'Oct  2022 - Mar 2023',
+    duration: 'Jun 2022 - Mar 2023',
     details: [
       'Development of responsive and performant websites and web applications for small and medium-sized businesses',
       'Collaborating with clients to define project requirements and goals',

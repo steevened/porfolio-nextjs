@@ -9,7 +9,7 @@ import Education from '@/components/about/Education';
 
 const About: NextPageWithLayout = () => {
   return (
-    <section className="mx-5 my-10 ">
+    <section className="my-10 ">
       <div className="">
         <h1 className="py-2 title-1 text-gradient">
           Hey, I&apos;m Steven Alvarado
