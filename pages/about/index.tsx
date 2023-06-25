@@ -1,7 +1,6 @@
 import { NextPageWithLayout } from '../_app';
 import { ReactElement, ReactNode } from 'react';
 import Layout from '@/components/layouts/Layout';
-import Head from 'next/head';
 import Description from '@/components/about/Description';
 import Stack from '@/components/about/Stack';
 import Experience from '@/components/about/Experience';

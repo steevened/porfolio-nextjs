@@ -1,6 +1,3 @@
-import { Skill } from '@/lib/interfaces/api.interface';
-import Image from 'next/image';
-import CardHovered from '../atoms/Cards/CardHovered';
 import SkillsContainer from './SkillsContainer';
 
 const SkillsCards = () => {

@@ -1,10 +1,7 @@
 import Layout from '@/components/layouts/Layout';
-import Head from 'next/head';
 import { ReactElement } from 'react';
-
 import { BlogsList } from '@/components/blogs/BlogsList';
 import { ContactCard } from '@/components/molecules/ContactCard';
-
 import Hero from '@/components/home/Hero';
 import Projects from '@/components/home/Projects';
 import TechSlider from '@/components/sliders/TechSlider';

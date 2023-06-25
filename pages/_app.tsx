@@ -6,7 +6,6 @@ import { QueryClient } from 'react-query';
 import { UIProvider } from '@/context/ui';
 import { ThemeProvider as ThemeDarkModeProvider } from 'next-themes';
 import { ThemeProvider } from '@material-tailwind/react';
-// import { Database } from '../database.types';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -17,9 +16,6 @@ type AppPropsWithLayout<P = {}> = AppProps & {
 };
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
-  // const [supabaseClient] = useState(() => createBrowserSupabaseClient());
-  const queryClient = new QueryClient();
-
   const getLayout = Component.getLayout ?? ((page: ReactElement) => page);
 
   return (

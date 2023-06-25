@@ -52,7 +52,7 @@ const NavbarLinks = () => {
       case '/works':
         setRouteIndex(1);
         break;
-      case '/works/[name]':
+      case '/works/[slug]':
         setRouteIndex(1);
         break;
       case '/blogs':
@@ -78,11 +78,12 @@ const NavbarLinks = () => {
     setHoverIndex(-1);
   };
 
-  const isHome = pathname === '/';
   const isAbout = pathname === '/about';
-  const isWorks = pathname === '/works' || pathname === '/works/[name]';
+  const isWorks = pathname === '/works' || pathname.startsWith('/works');
   const isContact = pathname === '/contact';
   const isBlogs = pathname.startsWith('/blogs');
+
+  console.log(pathname);
 
   return (
     <>

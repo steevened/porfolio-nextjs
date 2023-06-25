@@ -92,7 +92,8 @@ export const projects: Project[] = [
     slug: 'sociai',
     title: 'SociAI',
     description: 'Feel the power of AI in your Instagram clone app.',
-    building: true,
+    building: false,
+    demo: 'https://sociai.netlify.app',
     repo: 'https://github.com/steevened/sociai',
     images: [
       '/projects/aigram.png',

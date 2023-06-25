@@ -1,7 +1,6 @@
 import React from 'react';
 import DivProps from '../../lib/interfaces/components.interface';
 import CardHovered from '../atoms/Cards/CardHovered';
-import { SkillIcon } from '../svg/Svg';
 
 interface Props extends DivProps {
   title: string;

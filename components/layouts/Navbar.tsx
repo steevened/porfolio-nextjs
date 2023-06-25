@@ -1,11 +1,8 @@
 import { UIContext } from '@/context/ui';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { FC, Fragment, useContext, useEffect, useRef, useState } from 'react';
-import Drawer from './Drawer';
+import { FC, useContext, useEffect, useRef } from 'react';
 import NavbarLinks from '../molecules/NavbarLinks';
 import { gsap } from 'gsap';
-import { Button } from '@material-tailwind/react';
 
 const Navbar: FC = () => {
   const { isNavbarSticky } = useContext(UIContext);
