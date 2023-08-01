@@ -13,7 +13,7 @@ const About: NextPageWithLayout = () => {
         <h1 className="py-2 title-1 text-gradient">
           Hey, I&apos;m Steven Alvarado
         </h1>
-        <h2 className="title-3">A web developer based in Ecuador 🇪🇨</h2>
+        <h2 className="title-3">Web developer based in Ecuador 🇪🇨</h2>
       </div>
       <Description />
       <div className="flex flex-col mt-24 gap-14">
