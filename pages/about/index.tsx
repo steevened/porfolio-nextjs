@@ -21,13 +21,7 @@ const About: NextPageWithLayout = () => {
         <Experience />
         <Education />
       </div>
-      {/* <DetailsCard className="mt-10" /> */}
-
-      {/* <div className="flex flex-col items-center justify-center mx-auto mt-10">
-            <h4 className="text-gradient title-2">My current strike</h4>
-
-            <GitHubCalendar username="steevened" fontSize={16} />
-          </div> */}
+      
     </section>
   );
 };
